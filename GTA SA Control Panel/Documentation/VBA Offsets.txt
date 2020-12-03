@@ -1,0 +1,372 @@
+﻿Select Case cboGTAVersion.ListIndex
+        Case 0 'V1.0
+            GTASABaseAdr.PlayerAdr = &HB6F5F0       'player addres start will be read from this location
+            GTASABaseAdr.PlayerAdr2 = &HB7CD98      'player addres start, as confirmation will be read from this location
+            GTASABaseAdr.CurrCarAdr = &HB6F3B8      'current car addres start will be read from this location
+            GTASABaseAdr.Msg1Adr = &HBAA7A0     'location to get the in-game message shown
+            GTASABaseAdr.MoneyAdr = &HB7CE50
+            GTASABaseAdr.FatStatAdr = &HB793D4
+            GTASABaseAdr.StaminaStatAdr = &HB793D8
+            GTASABaseAdr.MuscleStatAdr = &HB793DC
+            GTASABaseAdr.MaxHealthStatAdr = &HB793E0
+            GTASABaseAdr.EnergyStatAdr = &HB790B4
+            GTASABaseAdr.WeaponProfStatAdr(0) = &HB79494
+            GTASABaseAdr.WeaponProfStatAdr(1) = &HB79498
+            GTASABaseAdr.WeaponProfStatAdr(2) = &HB7949C
+            GTASABaseAdr.WeaponProfStatAdr(3) = &HB794A0
+            GTASABaseAdr.WeaponProfStatAdr(4) = &HB794A4
+            GTASABaseAdr.WeaponProfStatAdr(5) = &HB794A8
+            GTASABaseAdr.WeaponProfStatAdr(6) = &HB794AC
+            GTASABaseAdr.WeaponProfStatAdr(7) = &HB794B0
+            GTASABaseAdr.WeaponProfStatAdr(8) = &HB794B4
+            GTASABaseAdr.WeaponProfStatAdr(9) = &HB794B8
+            GTASABaseAdr.HotCoffeeAdr = &HA4AC6C
+            GTASABaseAdr.VehicleProfAdr(0) = &HB790A0 'car
+            GTASABaseAdr.VehicleProfAdr(1) = &HB791B4 'bike
+            GTASABaseAdr.VehicleProfAdr(2) = &HB791B8 'cycle
+            GTASABaseAdr.VehicleProfAdr(3) = &HB7919C 'flying
+            GTASABaseAdr.LungCapacityAdr = &HB791A4
+            GTASABaseAdr.GamblingStatAdr = &HB794C4
+            'Denise/Michelle/Helena/Katie/Barbara/Millie
+            GTASABaseAdr.GFStatAdr(0) = &HB79210
+            GTASABaseAdr.GFStatAdr(1) = &HB79214
+            GTASABaseAdr.GFStatAdr(2) = &HB79218
+            GTASABaseAdr.GFStatAdr(3) = &HB79220
+            GTASABaseAdr.GFStatAdr(4) = &HB7921C
+            GTASABaseAdr.GFStatAdr(5) = &HB79224
+            GTASABaseAdr.GFStatAdr(0) = &HA49EFC   'Denise Progress
+            GTASABaseAdr.GFStatAdr(1) = &HA49F00   'Michelle Progress
+            GTASABaseAdr.GFStatAdr(2) = &HA49F04   'Helena Progress
+            GTASABaseAdr.GFStatAdr(3) = &HA49F0C   'Katie Progress
+            GTASABaseAdr.GFStatAdr(4) = &HA49F08   'Barbara Progress
+            GTASABaseAdr.GFStatAdr(5) = &HA49F10   'Millie Progress
+            GTASABaseAdr.CheatCountAdr = &HB79044
+            GTASABaseAdr.CheatStatAdr = &H96918C
+            GTASABaseAdr.OpenedIslandsAdr = &HB790F4
+            'Never Wanted=2'Never Get Hungry=3'Infinite Health=4'Infinite Oxygen=5'Infinite Ammo=6'Tank Mode=7
+            'Mega Punch=8'Mega Jump=9'Max Respect=10'Max Sex Appeal=11'Fast Cars=12'Cheap Cars=13'Infinite Run=14'Fireproof=15
+            GTASABaseAdr.cNeverWantedAdr = &H969171
+            GTASABaseAdr.cCheatsAdr(0) = &H969171
+            GTASABaseAdr.cNeverGetHungryAdr = &H969174
+            GTASABaseAdr.cCheatsAdr(1) = &H969174
+            GTASABaseAdr.cInfHealthAdr = &H96916D
+            GTASABaseAdr.cCheatsAdr(2) = &H96916D
+            GTASABaseAdr.cInfOxygenAdr = &H96916E
+            GTASABaseAdr.cCheatsAdr(3) = &H96916E
+            GTASABaseAdr.cInfAmmoAdr = &H969178
+            GTASABaseAdr.cCheatsAdr(4) = &H969178
+            GTASABaseAdr.cTankModeAdr = &H969164
+            GTASABaseAdr.cCheatsAdr(5) = &H969164
+            GTASABaseAdr.cMegaPunchAdr = &H969173
+            GTASABaseAdr.cCheatsAdr(6) = &H969173
+            GTASABaseAdr.cMegaJumpAdr = &H96916C
+            GTASABaseAdr.cCheatsAdr(7) = &H96916C
+            GTASABaseAdr.cMaxRespectAdr = &H96917F
+            GTASABaseAdr.cCheatsAdr(8) = &H96917F
+            GTASABaseAdr.cMaxSexAppealAdr = &H969180
+            GTASABaseAdr.cCheatsAdr(9) = &H969180
+            GTASABaseAdr.cFastCarsAdr = &H96915F
+            GTASABaseAdr.cCheatsAdr(10) = &H96915F
+            GTASABaseAdr.cCheapCarsAdr = &H96915E
+            GTASABaseAdr.cCheatsAdr(11) = &H96915E
+            GTASABaseAdr.cInfRunAdr = &HB7CEE4
+            GTASABaseAdr.cCheatsAdr(12) = &HB7CEE4
+            GTASABaseAdr.cFireproofAdr = &HB7CEE6
+            GTASABaseAdr.cCheatsAdr(13) = &HB7CEE6
+            GTASABaseAdr.cCheatsAdr(14) = &H96914C          'Perfect Handling
+            GTASABaseAdr.cCheatsAdr(15) = &H96917A          'Decreased Traffic
+            GTASABaseAdr.cCheatsAdr(16) = &H969161          'Huge Bunny Hop
+            GTASABaseAdr.cCheatsAdr(17) = &H969165          'All cars have Nitro
+            GTASABaseAdr.cCheatsAdr(18) = &H969153          'Boats can Fly
+            GTASABaseAdr.cCheatsAdr(19) = &H969160          'Cars can Fly
+            GTASABaseAdr.DaysInGameAdr = &HB79038
+            GTASABaseAdr.CurrHourAdr = &HB70153
+            GTASABaseAdr.CurrMinuteAdr = &HB70152
+            GTASABaseAdr.CurrWeekdayAdr = &HB7014E '1 to 7
+            GTASABaseAdr.GameSpeedMsAdr = &HB7015C 'Defines how many ms = 1 second... default 1000, set to 1 for a headache
+            GTASABaseAdr.GameSpeedPctAdr = &HB7CB64 'defines the speed of the game, 1 = 100%, float
+            GTASABaseAdr.WeatherLockAdr = &HC81318
+            GTASABaseAdr.WeatherToGoAdr = &HC8131C
+            GTASABaseAdr.WeatherCurrentAdr = &HC81320
+            'car spawn and weapon initialisation code injection:
+            GTASABaseAdr.CodeInjectJumpAdr = &H53BF9C      'to inject jump code
+            GTASABaseAdr.CodeInjectCodeAdr = &H856CE0      'to inject asm functions
+            GTASABaseAdr.CarSpawnAdr = &H1301000           'Car Spawn Injected Code reads this Adr.
+            For iCtr = 0 To 11
+                GTASABaseAdr.WeaponSpawnAdr(iCtr) = &H1301004 + CLng(iCtr * 4) 'Weapon Spawn Injected Code for slot iCtr+1 reads this Adr.
+            Next iCtr
+            'the following is for code injection
+            isInjected = False
+            'original gta_sa code:
+            sHEX = "A048CBB700"
+            For iCtr = 0 To 4
+                bNotInjectedJump(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'jump code:
+            sHEX = "E93FAD3100"
+            For iCtr = 0 To 4
+                bInjectedJump(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'function code:
+            sHEX = "5650A10010300183F800587418FF3500103001E8B833BEFF83C404C7050010300100000000"
+            sHEX = sHEX & "50A10410300183F80058741A6A02FF3504103001E8C21ABBFF83C408C7050410300100000000"
+            sHEX = sHEX & "50A10810300183F80058741A6A02FF3508103001E89C1ABBFF83C408C7050810300100000000"
+            sHEX = sHEX & "50A10C10300183F80058741A6A02FF350C103001E8761ABBFF83C408C7050C10300100000000"
+            sHEX = sHEX & "50A11010300183F80058741A6A02FF3510103001E8501ABBFF83C408C7051010300100000000"
+            sHEX = sHEX & "50A11410300183F80058741A6A02FF3514103001E82A1ABBFF83C408C7051410300100000000"
+            sHEX = sHEX & "50A11810300183F80058741A6A02FF3518103001E8041ABBFF83C408C7051810300100000000"
+            sHEX = sHEX & "50A11C10300183F80058741A6A02FF351C103001E8DE19BBFF83C408C7051C10300100000000"
+            sHEX = sHEX & "50A12010300183F80058741A6A02FF3520103001E8B819BBFF83C408C7052010300100000000"
+            sHEX = sHEX & "50A12410300183F80058741A6A02FF3524103001E89219BBFF83C408C7052410300100000000"
+            sHEX = sHEX & "50A12810300183F80058741A6A02FF3528103001E86C19BBFF83C408C7052810300100000000"
+            sHEX = sHEX & "50A12C10300183F80058741A6A02FF352C103001E84619BBFF83C408C7052C10300100000000"
+            sHEX = sHEX & "50A13010300183F80058741A6A02FF3530103001E82019BBFF83C408C7053010300100000000"
+            sHEX = sHEX & "5EA048CBB700E9C950CEFF"
+            For iCtr = 0 To 503
+                bInjectedCode(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'the following is for Code Injection for One Hit Kill:
+            GTASABaseAdr.CodeInjectJump_OneHitKillAdr = &H4B331F
+            GTASABaseAdr.CodeInjectCode_OneHitKillAdr = &H856F68
+            'original gta_sa code:
+            sHEX = "899640050000"
+            For iCtr = 0 To 5 '6 bytes in total
+                bNotInjectedJump_OneHitKill(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'jump code:
+            sHEX = "E94A3C3A0090"
+            For iCtr = 0 To 5
+                bInjectedJump_OneHitKill(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'function code:
+            sHEX = "A827480E000060A1686F85008D8E400500003BC8750961899640050000EB0B61C7864005000000000000E98EC3C5FF"
+            For iCtr = 0 To 46 '47 bytes in total
+                bInjectedCode_OneHitKill(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'the following is for NOOP'ing the mission timers:
+            GTASABaseAdr.CodeInjectNOP_FreezeTimerDownAdr = &H44CB54
+            GTASABaseAdr.CodeInjectNOP_FreezeTimerUpAdr = &H44CBAB
+            iOrg_FreezeTimerDown = &HCD2B  'this is original code (sub         ecx,ebp)
+            iOrg_FreezeTimerUp = &HCD03    'this is original code (add         ecx,ebp)
+            'Static Mem. Locations for garages:
+            GTASAGarageAddresses(iJohnson).lngXCoordAdr = &H96ABD8   'Johnson House Car 1
+            GTASAGarageAddresses(iJohnson).lngDoorStateAdr = &H96C82D 'Johnson Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iElCorona).lngXCoordAdr = &H96B5D8  'El Corona Car 1
+            GTASAGarageAddresses(iElCorona).lngDoorStateAdr = &H96C4CD  'El Corona Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iSantaBeach).lngXCoordAdr = &H96ACD8  'Santa Maria Beach Car 1
+            GTASAGarageAddresses(iSantaBeach).lngDoorStateAdr = &H96CB8D  'Santa Maria Beach Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iMulHolland).lngXCoordAdr = &H96B6D8  'MulHolland Car 1
+            GTASAGarageAddresses(iMulHolland).lngDoorStateAdr = &H96CC65  'MulHolland Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iPalomino).lngXCoordAdr = &H96B3D8  'Palomino Creek Car 1
+            GTASAGarageAddresses(iPalomino).lngDoorStateAdr = &H96E915  'Palomino Creek Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iPrickle).lngXCoordAdr = &H96B1D8  'Prickle Pine Car 1
+            GTASAGarageAddresses(iPrickle).lngDoorStateAdr = &H96E0A5  'Prickle Prine Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iWhitewood).lngXCoordAdr = &H96B2D8  'Whitewood Estates Car 1
+            GTASAGarageAddresses(iWhitewood).lngDoorStateAdr = &H96E17D  'Whitewood Estates Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iRedsands).lngXCoordAdr = &H96B4D8  'Redsands West Car 1
+            GTASAGarageAddresses(iRedsands).lngDoorStateAdr = &H96DFCD  'Redsands West Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iRockshore).lngXCoordAdr = &H96ADD8  'Rockshore West Car 1
+            GTASAGarageAddresses(iRockshore).lngDoorStateAdr = &H96DD45  'Rockshore West Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iDillimore).lngXCoordAdr = &H96B0D8  'Dillimore Car 1
+            GTASAGarageAddresses(iDillimore).lngDoorStateAdr = &H96E9ED  'Dillimore Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iFortCarson).lngXCoordAdr = &H96AED8  'Fort Carson Car 1
+            GTASAGarageAddresses(iFortCarson).lngDoorStateAdr = &H96E405  'Fort Carson Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iVerdant).lngXCoordAdr = &H96AFD8  'Verdant Meadows Car 1
+            GTASAGarageAddresses(iVerdant).lngDoorStateAdr = &H96E4DD  'Verdant Meadows Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iVerdantAir).lngXCoordAdr = &H96BED8  'Derdant Meadows Airport Car 1
+            GTASAGarageAddresses(iVerdantAir).lngDoorStateAdr = &H96E68D  'Airport Garage Door, Derdant Meadows
+            GTASAGarageAddresses(iCalton).lngXCoordAdr = &H96BAD8  'Calton Heights Car 1
+            GTASAGarageAddresses(iCalton).lngDoorStateAdr = &H96D5AD  'Calton Heights Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iParadiso).lngXCoordAdr = &H96BBD8  'Paradiso Car 1
+            GTASAGarageAddresses(iParadiso).lngDoorStateAdr = &H96D835  'Paradiso Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iDoherty).lngXCoordAdr = &H96BCD8  'Doherty Car 1
+            GTASAGarageAddresses(iDoherty).lngDoorStateAdr = &H96D24D  'Doherty Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iHashbury).lngXCoordAdr = &H96BDD8  'Hashbury Car 1
+            GTASAGarageAddresses(iHashbury).lngDoorStateAdr = &H96CEED  'Hashbury Garage Door State (0:closed 1:open 2:closing 3:opening)
+
+        Case 1 'v1.1
+            GTASABaseAdr.PlayerAdr = &HB6F5F0 + &H2680       'player addres start will be read from this location
+            GTASABaseAdr.PlayerAdr2 = &HB7CD98 + &H2680      'player addres start, as confirmation will be read from this location
+            GTASABaseAdr.CurrCarAdr = &HB6F3B8 + &H2680      'current car addres start will be read from this location
+            GTASABaseAdr.Msg1Adr = &HBAA7A0 + &H2680     'location to get the in-game message shown
+            GTASABaseAdr.MoneyAdr = &HB7CE50 + &H2680
+            GTASABaseAdr.FatStatAdr = &HB793D4 + &H2680
+            GTASABaseAdr.StaminaStatAdr = &HB793D8 + &H2680
+            GTASABaseAdr.MuscleStatAdr = &HB793DC + &H2680
+            GTASABaseAdr.MaxHealthStatAdr = &HB793E0 + &H2680
+            GTASABaseAdr.EnergyStatAdr = &HB790B4 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(0) = &HB79494 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(1) = &HB79498 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(2) = &HB7949C + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(3) = &HB794A0 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(4) = &HB794A4 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(5) = &HB794A8 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(6) = &HB794AC + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(7) = &HB794B0 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(8) = &HB794B4 + &H2680
+            GTASABaseAdr.WeaponProfStatAdr(9) = &HB794B8 + &H2680
+            GTASABaseAdr.HotCoffeeAdr = &HA4AC6C + &H2680
+            GTASABaseAdr.VehicleProfAdr(0) = &HB790A0 + &H2680 'car
+            GTASABaseAdr.VehicleProfAdr(1) = &HB791B4 + &H2680 'bike
+            GTASABaseAdr.VehicleProfAdr(2) = &HB791B8 + &H2680 'cycle
+            GTASABaseAdr.VehicleProfAdr(3) = &HB7919C + &H2680 'flying
+            GTASABaseAdr.LungCapacityAdr = &HB791A4 + &H2680
+            GTASABaseAdr.GamblingStatAdr = &HB794C4 + &H2680
+            'Denise/Michelle/Helena/Katie/Barbara/Millie
+            GTASABaseAdr.GFStatAdr(0) = &HB79210 + &H2680
+            GTASABaseAdr.GFStatAdr(1) = &HB79214 + &H2680
+            GTASABaseAdr.GFStatAdr(2) = &HB79218 + &H2680
+            GTASABaseAdr.GFStatAdr(3) = &HB79220 + &H2680
+            GTASABaseAdr.GFStatAdr(4) = &HB7921C + &H2680
+            GTASABaseAdr.GFStatAdr(5) = &HB79224 + &H2680
+            GTASABaseAdr.GFStatAdr(0) = &HA49EFC + &H2680   'Denise Progress
+            GTASABaseAdr.GFStatAdr(1) = &HA49F00 + &H2680   'Michelle Progress
+            GTASABaseAdr.GFStatAdr(2) = &HA49F04 + &H2680   'Helena Progress
+            GTASABaseAdr.GFStatAdr(3) = &HA49F0C + &H2680   'Katie Progress
+            GTASABaseAdr.GFStatAdr(4) = &HA49F08 + &H2680   'Barbara Progress
+            GTASABaseAdr.GFStatAdr(5) = &HA49F10 + &H2680   'Millie Progress
+            GTASABaseAdr.CheatCountAdr = &HB79044 + &H2680
+            GTASABaseAdr.CheatStatAdr = &H96918C + &H2680
+            GTASABaseAdr.OpenedIslandsAdr = &HB790F4 + &H2680
+            'Never Wanted=2'Never Get Hungry=3'Infinite Health=4'Infinite Oxygen=5'Infinite Ammo=6'Tank Mode=7
+            'Mega Punch=8'Mega Jump=9'Max Respect=10'Max Sex Appeal=11'Fast Cars=12'Cheap Cars=13'Infinite Run=14'Fireproof=15
+            GTASABaseAdr.cNeverWantedAdr = &H969171 + &H2680
+            GTASABaseAdr.cCheatsAdr(0) = &H969171 + &H2680
+            GTASABaseAdr.cNeverGetHungryAdr = &H969174 + &H2680
+            GTASABaseAdr.cCheatsAdr(1) = &H969174 + &H2680
+            GTASABaseAdr.cInfHealthAdr = &H96916D + &H2680
+            GTASABaseAdr.cCheatsAdr(2) = &H96916D + &H2680
+            GTASABaseAdr.cInfOxygenAdr = &H96916E + &H2680
+            GTASABaseAdr.cCheatsAdr(3) = &H96916E + &H2680
+            GTASABaseAdr.cInfAmmoAdr = &H969178 + &H2680
+            GTASABaseAdr.cCheatsAdr(4) = &H969178 + &H2680
+            GTASABaseAdr.cTankModeAdr = &H969164 + &H2680
+            GTASABaseAdr.cCheatsAdr(5) = &H969164 + &H2680
+            GTASABaseAdr.cMegaPunchAdr = &H969173 + &H2680
+            GTASABaseAdr.cCheatsAdr(6) = &H969173 + &H2680
+            GTASABaseAdr.cMegaJumpAdr = &H96916C + &H2680
+            GTASABaseAdr.cCheatsAdr(7) = &H96916C + &H2680
+            GTASABaseAdr.cMaxRespectAdr = &H96917F + &H2680
+            GTASABaseAdr.cCheatsAdr(8) = &H96917F + &H2680
+            GTASABaseAdr.cMaxSexAppealAdr = &H969180 + &H2680
+            GTASABaseAdr.cCheatsAdr(9) = &H969180 + &H2680
+            GTASABaseAdr.cFastCarsAdr = &H96915F + &H2680
+            GTASABaseAdr.cCheatsAdr(10) = &H96915F + &H2680
+            GTASABaseAdr.cCheapCarsAdr = &H96915E + &H2680
+            GTASABaseAdr.cCheatsAdr(11) = &H96915E + &H2680
+            GTASABaseAdr.cInfRunAdr = &HB7CEE4 + &H2680
+            GTASABaseAdr.cCheatsAdr(12) = &HB7CEE4 + &H2680
+            GTASABaseAdr.cFireproofAdr = &HB7CEE6 + &H2680
+            GTASABaseAdr.cCheatsAdr(13) = &HB7CEE6 + &H2680
+            GTASABaseAdr.cCheatsAdr(14) = &H96914C + &H2680          'Perfect Handling
+            GTASABaseAdr.cCheatsAdr(15) = &H96917A + &H2680          'Decreased Traffic
+            GTASABaseAdr.cCheatsAdr(16) = &H969161 + &H2680          'Huge Bunny Hop
+            GTASABaseAdr.cCheatsAdr(17) = &H969165 + &H2680          'All cars have Nitro
+            GTASABaseAdr.cCheatsAdr(18) = &H969153 + &H2680          'Boats can Fly
+            GTASABaseAdr.cCheatsAdr(19) = &H969160 + &H2680          'Cars can Fly
+            GTASABaseAdr.DaysInGameAdr = &HB79038 + &H2680
+            GTASABaseAdr.CurrHourAdr = &HB70153 + &H2680
+            GTASABaseAdr.CurrMinuteAdr = &HB70152 + &H2680
+            GTASABaseAdr.CurrWeekdayAdr = &HB7014E + &H2680 '1 to 7
+            GTASABaseAdr.GameSpeedMsAdr = &HB7015C + &H2680 'Defines how many ms = 1 second... default 1000, set to 1 for a headache
+            GTASABaseAdr.GameSpeedPctAdr = &HB7CB64 + &H2680 'defines the speed of the game, 1 = 100%, float
+            GTASABaseAdr.WeatherLockAdr = &HC81318 + &H2680
+            GTASABaseAdr.WeatherToGoAdr = &HC8131C + &H2680
+            GTASABaseAdr.WeatherCurrentAdr = &HC81320 + &H2680
+            'car spawn and weapon initialisation code injection:
+            GTASABaseAdr.CodeInjectJumpAdr = &H53C3D6      'to inject jump code
+            GTASABaseAdr.CodeInjectCodeAdr = &H857CE0      'to inject asm functions
+            GTASABaseAdr.CarSpawnAdr = &H1301000           'Car Spawn Injected Code reads this Adr.
+            For iCtr = 0 To 11
+                GTASABaseAdr.WeaponSpawnAdr(iCtr) = &H1301004 + CLng(iCtr * 4) 'Weapon Spawn Injected Code for slot iCtr+1 reads this Adr.
+            Next iCtr
+            'the following is for code injection
+            isInjected = False
+            'original gta_sa code:
+            sHEX = "A0C8F1B700"
+            For iCtr = 0 To 4
+                bNotInjectedJump(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'jump code:
+            sHEX = "E905B93100"
+            For iCtr = 0 To 4
+                bInjectedJump(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'function code:
+            sHEX = "5650A10010300183F800587418FF3500103001E83824BEFF83C404C7050010300100000000"
+            sHEX = sHEX & "50A10410300183F80058741A6A02FF3504103001E8F20ABBFF83C408C7050410300100000000"
+            sHEX = sHEX & "50A10810300183F80058741A6A02FF3508103001E8CC0ABBFF83C408C7050810300100000000"
+            sHEX = sHEX & "50A10C10300183F80058741A6A02FF350C103001E8A60ABBFF83C408C7050C10300100000000"
+            sHEX = sHEX & "50A11010300183F80058741A6A02FF3510103001E8800ABBFF83C408C7051010300100000000"
+            sHEX = sHEX & "50A11410300183F80058741A6A02FF3514103001E85A0ABBFF83C408C7051410300100000000"
+            sHEX = sHEX & "50A11810300183F80058741A6A02FF3518103001E8340ABBFF83C408C7051810300100000000"
+            sHEX = sHEX & "50A11C10300183F80058741A6A02FF351C103001E80E0ABBFF83C408C7051C10300100000000"
+            sHEX = sHEX & "50A12010300183F80058741A6A02FF3520103001E8E809BBFF83C408C7052010300100000000"
+            sHEX = sHEX & "50A12410300183F80058741A6A02FF3524103001E8C209BBFF83C408C7052410300100000000"
+            sHEX = sHEX & "50A12810300183F80058741A6A02FF3528103001E89C09BBFF83C408C7052810300100000000"
+            sHEX = sHEX & "50A12C10300183F80058741A6A02FF352C103001E87609BBFF83C408C7052C10300100000000"
+            sHEX = sHEX & "50A13010300183F80058741A6A02FF3530103001E85009BBFF83C408C7053010300100000000"
+            sHEX = sHEX & "5EA0C8F1B700E90345CEFF"
+            For iCtr = 0 To 503
+                bInjectedCode(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'the following is for Code Injection for One Hit Kill:
+            GTASABaseAdr.CodeInjectJump_OneHitKillAdr = &H4B339F
+            GTASABaseAdr.CodeInjectCode_OneHitKillAdr = &H857F68
+            'original gta_sa code:
+            sHEX = "899640050000"
+            For iCtr = 0 To 5
+                bNotInjectedJump_OneHitKill(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'jump code:
+            sHEX = "E9CA4B3A0090"
+            For iCtr = 0 To 5
+                bInjectedJump_OneHitKill(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'function code:
+            sHEX = "A827480E000060A1687F85008D8E400500003BC8750961899640050000EB0B61C7864005000000000000E90EB4C5FF"
+            For iCtr = 0 To 46 '47 bytes in total
+                bInjectedCode_OneHitKill(iCtr) = CByte("&H" & Mid(sHEX, (iCtr * 2) + 1, 2))
+            Next iCtr
+            'the following is for NOOP'ing the mission timers:
+            GTASABaseAdr.CodeInjectNOP_FreezeTimerDownAdr = &H44CBD6
+            GTASABaseAdr.CodeInjectNOP_FreezeTimerUpAdr = &H44CC2B
+            iOrg_FreezeTimerDown = &HCD2B  'this is original code (sub         ecx,ebp)
+            iOrg_FreezeTimerUp = &HCD03    'this is original code (add         ecx,ebp)
+            'Static Mem. Locations for garages:
+            GTASAGarageAddresses(iJohnson).lngXCoordAdr = &H96ABD8 + &H2680   'Johnson House Car 1
+            GTASAGarageAddresses(iJohnson).lngDoorStateAdr = &H96C82D + &H2680 'Johnson Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iElCorona).lngXCoordAdr = &H96B5D8 + &H2680  'El Corona Car 1
+            GTASAGarageAddresses(iElCorona).lngDoorStateAdr = &H96C4CD + &H2680  'El Corona Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iSantaBeach).lngXCoordAdr = &H96ACD8 + &H2680  'Santa Maria Beach Car 1
+            GTASAGarageAddresses(iSantaBeach).lngDoorStateAdr = &H96CB8D + &H2680  'Santa Maria Beach Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iMulHolland).lngXCoordAdr = &H96B6D8 + &H2680  'MulHolland Car 1
+            GTASAGarageAddresses(iMulHolland).lngDoorStateAdr = &H96CC65 + &H2680  'MulHolland Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iPalomino).lngXCoordAdr = &H96B3D8 + &H2680  'Palomino Creek Car 1
+            GTASAGarageAddresses(iPalomino).lngDoorStateAdr = &H96E915 + &H2680  'Palomino Creek Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iPrickle).lngXCoordAdr = &H96B1D8 + &H2680  'Prickle Pine Car 1
+            GTASAGarageAddresses(iPrickle).lngDoorStateAdr = &H96E0A5 + &H2680  'Prickle Prine Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iWhitewood).lngXCoordAdr = &H96B2D8 + &H2680  'Whitewood Estates Car 1
+            GTASAGarageAddresses(iWhitewood).lngDoorStateAdr = &H96E17D + &H2680  'Whitewood Estates Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iRedsands).lngXCoordAdr = &H96B4D8 + &H2680  'Redsands West Car 1
+            GTASAGarageAddresses(iRedsands).lngDoorStateAdr = &H96DFCD + &H2680  'Redsands West Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iRockshore).lngXCoordAdr = &H96ADD8 + &H2680  'Rockshore West Car 1
+            GTASAGarageAddresses(iRockshore).lngDoorStateAdr = &H96DD45 + &H2680  'Rockshore West Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iDillimore).lngXCoordAdr = &H96B0D8 + &H2680  'Dillimore Car 1
+            GTASAGarageAddresses(iDillimore).lngDoorStateAdr = &H96E9ED + &H2680  'Dillimore Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iFortCarson).lngXCoordAdr = &H96AED8 + &H2680  'Fort Carson Car 1
+            GTASAGarageAddresses(iFortCarson).lngDoorStateAdr = &H96E405 + &H2680  'Fort Carson Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iVerdant).lngXCoordAdr = &H96AFD8 + &H2680  'Verdant Meadows Car 1
+            GTASAGarageAddresses(iVerdant).lngDoorStateAdr = &H96E4DD + &H2680  'Verdant Meadows Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iVerdantAir).lngXCoordAdr = &H96BED8 + &H2680  'Derdant Meadows Airport Car 1
+            GTASAGarageAddresses(iVerdantAir).lngDoorStateAdr = &H96E68D + &H2680  'Airport Garage Door, Derdant Meadows
+            GTASAGarageAddresses(iCalton).lngXCoordAdr = &H96BAD8 + &H2680  'Calton Heights Car 1
+            GTASAGarageAddresses(iCalton).lngDoorStateAdr = &H96D5AD + &H2680  'Calton Heights Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iParadiso).lngXCoordAdr = &H96BBD8 + &H2680  'Paradiso Car 1
+            GTASAGarageAddresses(iParadiso).lngDoorStateAdr = &H96D835 + &H2680  'Paradiso Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iDoherty).lngXCoordAdr = &H96BCD8 + &H2680  'Doherty Car 1
+            GTASAGarageAddresses(iDoherty).lngDoorStateAdr = &H96D24D + &H2680  'Doherty Garage Door State (0:closed 1:open 2:closing 3:opening)
+            GTASAGarageAddresses(iHashbury).lngXCoordAdr = &H96BDD8 + &H2680  'Hashbury Car 1
+            GTASAGarageAddresses(iHashbury).lngDoorStateAdr = &H96CEED + &H2680  'Hashbury Garage Door State (0:closed 1:open 2:closing 3:opening)
+
+    End Select

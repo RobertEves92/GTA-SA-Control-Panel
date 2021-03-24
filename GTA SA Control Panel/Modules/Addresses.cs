@@ -169,7 +169,7 @@
     /// <summary>
     /// Class of methods for getting and setting game data values
     /// </summary>
-    public class AddressBook
+    public static class AddressBook
     {
         /// <summary>
         /// Checks if the player is in a game or not
@@ -187,7 +187,7 @@
         /// <summary>
         /// Data relating to the player character (CJ)
         /// </summary>
-        public class Player
+        public static class Player
         {
             /// <summary>
             /// Gets the player address
@@ -283,7 +283,7 @@
             /// Data relating to CJs skills
             /// </summary>
 
-            public class Skills
+            public static class Skills
             {
                 /// <summary>
                 /// Gets or Sets players gambling level (0-1000)
@@ -297,7 +297,7 @@
                 /// <summary>
                 /// Driving, Biking, Cycling, and Flying skills
                 /// </summary>
-                public class Transport
+                public static class Transport
                 {
                     /// <summary>
                     /// Gets or Sets players car driving skill (0-1000)
@@ -339,7 +339,7 @@
                 /// <summary>
                 /// Weapon skill levels
                 /// </summary>
-                public class Weapons
+                public static class Weapons
                 {
                     /// <summary>
                     /// Gets or Sets the skill level for: Pistol

@@ -6,6 +6,7 @@
     public class Addresses
     {
         private int Offset { get; set; }
+        private int Money { get; set; }
 
         #region Player Addresses
 
@@ -24,7 +25,7 @@
         /// <summary>
         /// Money Address
         /// </summary>
-        public int Money => 0xB7CE50 + Offset;
+        public int MoneyAddress => Money;
 
         #endregion Misc
 
@@ -147,6 +148,7 @@
         public static Addresses Version10 { get; } = new Addresses()//for v1.0
         {
             Offset = 0,            // <-- No Offset for version 1
+            Money = 0xB7CE50,
         };
 
         /// <summary>
@@ -155,6 +157,7 @@
         public static Addresses Version11 { get; } = new Addresses()//for v1.1
         {
             Offset = 0x2680,
+            Money = 0xB7F4D0,
         };
 
         /// <summary>
@@ -163,6 +166,7 @@
         public static Addresses Version2Steam { get; } = new Addresses()//for v1.1
         {
             Offset = 0x643228,
+            Money = 0x11C0188,
         };
 
         private Addresses()
@@ -212,8 +216,8 @@
             /// </summary>
             public static int Money
             {
-                get => Memory.ReadMemory<int>(Global.Addresses.Money);
-                set => Memory.WriteMemory(Global.Addresses.Money, value);
+                get => Memory.ReadMemory<int>(Global.Addresses.MoneyAddress);
+                set => Memory.WriteMemory(Global.Addresses.MoneyAddress, value);
             }
 
             /// <summary>

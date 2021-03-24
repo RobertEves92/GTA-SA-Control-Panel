@@ -13,6 +13,11 @@
         /// <summary>
         /// v1.1
         /// </summary>
-        v11
+        v11,
+
+        /// <summary>
+        /// V2 / Steam Version
+        /// </summary>
+        v2
     }
 }

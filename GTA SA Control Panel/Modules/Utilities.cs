@@ -6,7 +6,7 @@ namespace GTASAControlPanel.Modules
     /// <summary>
     /// Provides support functionality
     /// </summary>
-    public class Utilities
+    public static class Utilities
     {
         /// <summary>
         /// Resets all controls on a specified form

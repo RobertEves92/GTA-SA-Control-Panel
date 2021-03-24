@@ -141,8 +141,6 @@
 
         //private int MemoryWithTwoDifferentAddresses { get; set; } //does not use the offset - placeholder as a reminder
 
-        #endregion Misc
-
         /// <summary>
         /// Addresses for v1.0 of GTA:SA
         /// </summary>
@@ -172,6 +170,8 @@
         private Addresses()
         {
         }
+
+        #endregion Misc
     }
 
     /// <summary>

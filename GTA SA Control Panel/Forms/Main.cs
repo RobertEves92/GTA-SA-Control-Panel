@@ -150,7 +150,7 @@ namespace GTASAControlPanel.Forms
                     break;
 
                 case GTAExeVersion.v11:
-                    Global.Addresses = Addresses.Version2;
+                    Global.Addresses = Addresses.Version11;
                     break;
             }
         }

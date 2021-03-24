@@ -168,13 +168,9 @@ namespace GTASAControlPanel.UserControls
 
             foreach (Control c in Controls)
             {
-                if (c is StatControl)
+                if (c is StatControl sc && sc.ControlLock)
                 {
-                    StatControl sc = (StatControl)c;
-                    if (sc.ControlLock)
-                    {
-                        sc.UpdateValue(null);
-                    }
+                    sc.UpdateValue(null);
                 }
             }
         }

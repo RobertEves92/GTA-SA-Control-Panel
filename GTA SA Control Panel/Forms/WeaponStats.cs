@@ -79,9 +79,6 @@ namespace GTASAControlPanel.Forms
                 case "M4":
                     AddressBook.Player.Skills.Weapons.M4 = s.ControlCurrentValue;
                     break;
-
-                default:
-                    throw new ArgumentException();
             }
 
             UpdateValues();

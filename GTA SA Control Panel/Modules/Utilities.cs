@@ -29,12 +29,9 @@ namespace GTASAControlPanel.Modules
                     textBox.Text = null;
                 }
 
-                if (control is ComboBox comboBox)
+                if (control is ComboBox comboBox && comboBox.Items.Count > 0)
                 {
-                    if (comboBox.Items.Count > 0)
-                    {
-                        comboBox.SelectedIndex = 0;
-                    }
+                    comboBox.SelectedIndex = 0;
                 }
 
                 if (control is CheckBox checkBox)
@@ -47,12 +44,9 @@ namespace GTASAControlPanel.Modules
                     listBox.ClearSelected();
                 }
 
-                if (control is Label)
+                if (control is Label && control.Name.StartsWith("lbl"))
                 {
-                    if (control.Name.StartsWith("lbl"))
-                    {
-                        control.Text = "0";
-                    }
+                    control.Text = "0";
                 }
 
                 if (control is TrackBar trackBar)

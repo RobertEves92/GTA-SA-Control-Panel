@@ -161,6 +161,14 @@
             //MemoryWithTwoDifferentAddresses = 987654,  // <-- Different explicit address for version 2
         };
 
+        /// <summary>
+        /// Addresses for v2 / Steam Version of GTA:SA
+        /// </summary>
+        public static Addresses Version2Steam { get; } = new Addresses()//for v1.1
+        {
+            Offset = 0x643228,
+        };
+
         private Addresses()
         {
         }

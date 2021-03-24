@@ -128,23 +128,23 @@ namespace GTASAControlPanel.Modules
         /// <typeparam name="T">Data type that is being written</typeparam>
         /// <param name="Address">Memory address (as int) to write to</param>
         /// <param name="Value">Data to write</param>
-        public static void WriteMemory<T>(int Address, object Value)
+        public static void WriteMemory(int Address, object Value)
         {
             byte[] buffer = StructureToByteArray(Value); // Transform Data To ByteArray
 
             WriteProcessMemory((int)m_pProcessHandle, Address, buffer, buffer.Length, out m_iNumberOfBytesWritten);
         }
 
-        private static void WriteMemory<T>(int Address, char[] Value)
+        private static void WriteMemory(int Address, char[] Value)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(Value);
 
             WriteProcessMemory((int)m_pProcessHandle, Address, buffer, buffer.Length, out m_iNumberOfBytesWritten);
         }
 
-        private static void WriteMemory<T>(string Address, char[] Value)
+        private static void WriteMemory(string Address, char[] Value)
         {
-            WriteMemory<T>(int.Parse(Address, System.Globalization.NumberStyles.HexNumber), Value);
+            WriteMemory(int.Parse(Address, System.Globalization.NumberStyles.HexNumber), Value);
         }
 
         #endregion Write

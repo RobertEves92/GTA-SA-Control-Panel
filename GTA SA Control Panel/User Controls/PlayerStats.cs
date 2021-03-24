@@ -204,7 +204,7 @@ namespace GTASAControlPanel.UserControls
                 intBitOPBuffer = intBitOPBuffer & Convert.ToInt32(255 - (Math.Pow(2, iBitOffset)));
             }
 
-            Memory.WriteMemory<int>(iAdr, intBitOPBuffer);
+            Memory.WriteMemory(iAdr, intBitOPBuffer);
         }
     }
 }

@@ -207,7 +207,7 @@
             public static int Money
             {
                 get => Memory.ReadMemory<int>(Global.Addresses.Money);
-                set => Memory.WriteMemory<int>(Global.Addresses.Money, value);
+                set => Memory.WriteMemory(Global.Addresses.Money, value);
             }
 
             /// <summary>
@@ -216,7 +216,7 @@
             public static float CurrentHealth
             {
                 get => Memory.ReadMemory<float>(PlayerAddress + 1344);
-                set => Memory.WriteMemory<float>((int)(PlayerAddress + 1344), value);
+                set => Memory.WriteMemory((int)(PlayerAddress + 1344), value);
             }
 
             /// <summary>
@@ -225,7 +225,7 @@
             public static float MaxHealth
             {
                 get => Memory.ReadMemory<float>(PlayerAddress + 1348);
-                set => Memory.WriteMemory<float>((int)(PlayerAddress + 1348), value);
+                set => Memory.WriteMemory((int)(PlayerAddress + 1348), value);
             }
 
             /// <summary>
@@ -234,7 +234,7 @@
             public static float Armour
             {
                 get => Memory.ReadMemory<float>(PlayerAddress + 1352);
-                set => Memory.WriteMemory<float>((int)(PlayerAddress + 1352), value);
+                set => Memory.WriteMemory((int)(PlayerAddress + 1352), value);
             }
 
             #endregion Money/Health/Armour
@@ -247,7 +247,7 @@
             public static float Fat
             {
                 get => Memory.ReadMemory<float>(Global.Addresses.Fat);
-                set => Memory.WriteMemory<float>(Global.Addresses.Fat, value);
+                set => Memory.WriteMemory(Global.Addresses.Fat, value);
             }
 
             /// <summary>
@@ -256,7 +256,7 @@
             public static float Stamina
             {
                 get => Memory.ReadMemory<float>(Global.Addresses.Stamina);
-                set => Memory.WriteMemory<float>(Global.Addresses.Stamina, value);
+                set => Memory.WriteMemory(Global.Addresses.Stamina, value);
             }
 
             /// <summary>
@@ -265,7 +265,7 @@
             public static float Muscle
             {
                 get => Memory.ReadMemory<float>(Global.Addresses.Muscle);
-                set => Memory.WriteMemory<float>(Global.Addresses.Muscle, value);
+                set => Memory.WriteMemory(Global.Addresses.Muscle, value);
             }
 
             /// <summary>
@@ -274,7 +274,7 @@
             public static float LungCapacity
             {
                 get => Memory.ReadMemory<float>(Global.Addresses.LungCapacity);
-                set => Memory.WriteMemory<float>(Global.Addresses.LungCapacity, value);
+                set => Memory.WriteMemory(Global.Addresses.LungCapacity, value);
             }
 
             #endregion Body Stats / Abilities
@@ -291,7 +291,7 @@
                 public static float Gambling
                 {
                     get => Memory.ReadMemory<float>(Global.Addresses.Gambling);
-                    set => Memory.WriteMemory<float>(Global.Addresses.Gambling, value);
+                    set => Memory.WriteMemory(Global.Addresses.Gambling, value);
                 }
 
                 /// <summary>
@@ -305,7 +305,7 @@
                     public static uint Driving
                     {
                         get => Memory.ReadMemory<uint>(Global.Addresses.Driving);
-                        set => Memory.WriteMemory<uint>(Global.Addresses.Driving, value);
+                        set => Memory.WriteMemory(Global.Addresses.Driving, value);
                     }
 
                     /// <summary>
@@ -314,7 +314,7 @@
                     public static uint Biking
                     {
                         get => Memory.ReadMemory<uint>(Global.Addresses.Biking);
-                        set => Memory.WriteMemory<uint>(Global.Addresses.Biking, value);
+                        set => Memory.WriteMemory(Global.Addresses.Biking, value);
                     }
 
                     /// <summary>
@@ -323,7 +323,7 @@
                     public static uint Cycling
                     {
                         get => Memory.ReadMemory<uint>(Global.Addresses.Cycling);
-                        set => Memory.WriteMemory<uint>(Global.Addresses.Cycling, value);
+                        set => Memory.WriteMemory(Global.Addresses.Cycling, value);
                     }
 
                     /// <summary>
@@ -332,7 +332,7 @@
                     public static uint Flying
                     {
                         get => Memory.ReadMemory<uint>(Global.Addresses.Flying);
-                        set => Memory.WriteMemory<uint>(Global.Addresses.Flying, value);
+                        set => Memory.WriteMemory(Global.Addresses.Flying, value);
                     }
                 }
 
@@ -347,7 +347,7 @@
                     public static float Pistol
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.Pistol);
-                        set => Memory.WriteMemory<float>(Global.Addresses.Pistol, value);
+                        set => Memory.WriteMemory(Global.Addresses.Pistol, value);
                     }
 
                     /// <summary>
@@ -356,7 +356,7 @@
                     public static float SilencedPistol
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.SilencedPistol);
-                        set => Memory.WriteMemory<float>(Global.Addresses.SilencedPistol, value);
+                        set => Memory.WriteMemory(Global.Addresses.SilencedPistol, value);
                     }
 
                     /// <summary>
@@ -365,7 +365,7 @@
                     public static float DesertEagle
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.DesertEagle);
-                        set => Memory.WriteMemory<float>(Global.Addresses.DesertEagle, value);
+                        set => Memory.WriteMemory(Global.Addresses.DesertEagle, value);
                     }
 
                     /// <summary>
@@ -374,7 +374,7 @@
                     public static float Shotgun
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.Shotgun);
-                        set => Memory.WriteMemory<float>(Global.Addresses.Shotgun, value);
+                        set => Memory.WriteMemory(Global.Addresses.Shotgun, value);
                     }
 
                     /// <summary>
@@ -383,7 +383,7 @@
                     public static float SawnoffShotgun
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.SawnoffShotgun);
-                        set => Memory.WriteMemory<float>(Global.Addresses.SawnoffShotgun, value);
+                        set => Memory.WriteMemory(Global.Addresses.SawnoffShotgun, value);
                     }
 
                     /// <summary>
@@ -392,7 +392,7 @@
                     public static float CombatShotgun
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.CombatShotgun);
-                        set => Memory.WriteMemory<float>(Global.Addresses.CombatShotgun, value);
+                        set => Memory.WriteMemory(Global.Addresses.CombatShotgun, value);
                     }
 
                     /// <summary>
@@ -401,7 +401,7 @@
                     public static float MachinePistol
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.MachinePistol);
-                        set => Memory.WriteMemory<float>(Global.Addresses.MachinePistol, value);
+                        set => Memory.WriteMemory(Global.Addresses.MachinePistol, value);
                     }
 
                     /// <summary>
@@ -410,7 +410,7 @@
                     public static float SMG
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.SMG);
-                        set => Memory.WriteMemory<float>(Global.Addresses.SMG, value);
+                        set => Memory.WriteMemory(Global.Addresses.SMG, value);
                     }
 
                     /// <summary>
@@ -419,7 +419,7 @@
                     public static float AK47
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.AK47);
-                        set => Memory.WriteMemory<float>(Global.Addresses.AK47, value);
+                        set => Memory.WriteMemory(Global.Addresses.AK47, value);
                     }
 
                     /// <summary>
@@ -428,7 +428,7 @@
                     public static float M4
                     {
                         get => Memory.ReadMemory<float>(Global.Addresses.M4);
-                        set => Memory.WriteMemory<float>(Global.Addresses.M4, value);
+                        set => Memory.WriteMemory(Global.Addresses.M4, value);
                     }
                 }
             }

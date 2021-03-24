@@ -64,6 +64,7 @@ namespace GTASAControlPanel.UserControls
 
             Properties.Settings.Default.Save();
         }
+
         /// <summary>
         /// Loads user settings
         /// </summary>
@@ -167,15 +168,10 @@ namespace GTASAControlPanel.UserControls
 
             foreach (Control c in Controls)
             {
-                if (c is StatControl)
+                if (c is StatControl sc && sc.ControlLock)
                 {
-                    StatControl sc = (StatControl)c;
-                    if (sc.ControlLock)
-                    {
-                        sc.UpdateValue(null);
-                    }
+                    sc.UpdateValue(null);
                 }
-
             }
         }
 
@@ -208,8 +204,7 @@ namespace GTASAControlPanel.UserControls
                 intBitOPBuffer = intBitOPBuffer & Convert.ToInt32(255 - (Math.Pow(2, iBitOffset)));
             }
 
-            //Memory.WriteMemory<int>(iAdr, intBitOPBuffer, 2, 2);
-            Memory.WriteMemory<int>(iAdr, intBitOPBuffer);
+            Memory.WriteMemory(iAdr, intBitOPBuffer);
         }
     }
 }

@@ -59,5 +59,32 @@ namespace GTASAControlPanel.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/RobertEves92/GTA-SA-Control-Panel/issues/new?assignees=&amp;labels=bug&amp;template=bug-report.md&amp;title=%5BBUG%5D.
+        /// </summary>
+        internal static string BugReport {
+            get {
+                return ResourceManager.GetString("BugReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/RobertEves92/GTA-SA-Control-Panel/issues/new?assignees=&amp;labels=enhancement&amp;template=feature_request.md&amp;title=%5BFEATURE%5D.
+        /// </summary>
+        internal static string FeatureRequest {
+            get {
+                return ResourceManager.GetString("FeatureRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/RobertEves92/GTA-SA-Control-Panel.
+        /// </summary>
+        internal static string ProjectPage {
+            get {
+                return ResourceManager.GetString("ProjectPage", resourceCulture);
+            }
+        }
     }
 }

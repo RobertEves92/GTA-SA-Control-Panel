@@ -6,7 +6,7 @@ namespace GTASAControlPanel.Modules
     /// <summary>
     /// Provides support functionality
     /// </summary>
-    public class Utilities
+    public static class Utilities
     {
         /// <summary>
         /// Resets all controls on a specified form
@@ -24,50 +24,38 @@ namespace GTASAControlPanel.Modules
 
             void PerformReset(Control control)
             {
-                if (control is TextBox)
+                if (control is TextBox textBox)
                 {
-                    TextBox textBox = (TextBox)control;
                     textBox.Text = null;
                 }
 
-                if (control is ComboBox)
+                if (control is ComboBox comboBox && comboBox.Items.Count > 0)
                 {
-                    ComboBox comboBox = (ComboBox)control;
-                    if (comboBox.Items.Count > 0)
-                    {
-                        comboBox.SelectedIndex = 0;
-                    }
+                    comboBox.SelectedIndex = 0;
                 }
 
-                if (control is CheckBox)
+                if (control is CheckBox checkBox)
                 {
-                    CheckBox checkBox = (CheckBox)control;
                     checkBox.Checked = false;
                 }
 
-                if (control is ListBox)
+                if (control is ListBox listBox)
                 {
-                    ListBox listBox = (ListBox)control;
                     listBox.ClearSelected();
                 }
 
-                if (control is Label)
+                if (control is Label && control.Name.StartsWith("lbl"))
                 {
-                    if (control.Name.StartsWith("lbl"))
-                    {
-                        control.Text = "0";
-                    }
+                    control.Text = "0";
                 }
 
-                if (control is TrackBar)
+                if (control is TrackBar trackBar)
                 {
-                    TrackBar trackBar = (TrackBar)control;
                     trackBar.Value = 0;
                 }
 
-                if (control is StatControl)
+                if (control is StatControl statControl)
                 {
-                    StatControl statControl = (StatControl)control;
                     statControl.ControlCurrentValue = 0;
                 }
             }

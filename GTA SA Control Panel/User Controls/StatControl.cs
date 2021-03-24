@@ -24,6 +24,7 @@ namespace GTASAControlPanel.UserControls
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Gets or Sets the stat controls maximum permitted value
         /// </summary>
@@ -32,6 +33,7 @@ namespace GTASAControlPanel.UserControls
             get => trkValue.Maximum;
             set => trkValue.Maximum = value;
         }
+
         /// <summary>
         /// Gets or Sets the stat controls value
         /// </summary>
@@ -52,6 +54,7 @@ namespace GTASAControlPanel.UserControls
                 }
             }
         }
+
         /// <summary>
         /// Gets or Sets the stat control caption text
         /// </summary>
@@ -60,6 +63,7 @@ namespace GTASAControlPanel.UserControls
             get => lblCaption.Text;
             set => lblCaption.Text = value;
         }
+
         /// <summary>
         /// Gets or Sets the trackbar tick frequency
         /// </summary>
@@ -68,6 +72,7 @@ namespace GTASAControlPanel.UserControls
             get => trkValue.TickFrequency;
             set => trkValue.TickFrequency = value;
         }
+
         /// <summary>
         /// Gets or Sets the lock status of the control
         /// </summary>
@@ -76,6 +81,7 @@ namespace GTASAControlPanel.UserControls
             get => chkLock.Checked;
             set => chkLock.Checked = value;
         }
+
         /// <summary>
         /// Gets or Sets the value to lock the stat control at
         /// </summary>
@@ -112,6 +118,7 @@ namespace GTASAControlPanel.UserControls
         {
             UpdateValue(e);
         }
+
         /// <summary>
         /// Triggers event when the trackbar value is changed by the user
         /// </summary>
@@ -124,6 +131,7 @@ namespace GTASAControlPanel.UserControls
                 TrackValueChanged(this, e);
             }
         }
+
         private void chkLock_CheckedChanged(object sender, EventArgs e)
         {
             ControlLockValue = trkValue.Value;

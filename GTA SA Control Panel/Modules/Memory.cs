@@ -18,6 +18,7 @@ namespace GTASAControlPanel.Modules
         private static int m_iNumberOfBytesWritten = 0;
 
         private static bool isConnected = false;
+
         /// <summary>
         /// Checks if this program is connected to the gta process
         /// </summary>
@@ -41,7 +42,6 @@ namespace GTASAControlPanel.Modules
         /// <param name="ProcessName"></param>
         public static void Initialize(string ProcessName)
         {
-
             // Check if process is running
             if (Process.GetProcessesByName(ProcessName).Length > 0)
             {
@@ -55,6 +55,7 @@ namespace GTASAControlPanel.Modules
             m_pProcessHandle = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, false, m_Process.Id); // Sets Our ProcessHandle
             isConnected = true;
         }
+
         /// <summary>
         /// Gets the address of a specified module
         /// </summary>
@@ -77,14 +78,17 @@ namespace GTASAControlPanel.Modules
                     }
                 }
             }
-            catch {/*
+            catch
+            {/*
                     * Ignored catch: needs to exist for code to compile,
                     * but return line needs to be outside of catch for method to compile
-                    */ }
+                    */
+            }
             return -1;
         }
 
         #region Read
+
         /// <summary>
         /// Reads data from a specified memory address
         /// </summary>
@@ -95,6 +99,7 @@ namespace GTASAControlPanel.Modules
         {
             return ReadMemory<T>(Convert.ToInt32(Address));
         }
+
         private static T ReadMemory<T>(int Address) where T : struct
         {
             int ByteSize = Marshal.SizeOf(typeof(T)); // Get ByteSize Of DataType
@@ -103,6 +108,7 @@ namespace GTASAControlPanel.Modules
 
             return ByteArrayToStructure<T>(buffer); // Transform the ByteArray to The Desired DataType
         }
+
         private static float[] ReadMatrix<T>(int Address, int MatrixSize) where T : struct
         {
             int ByteSize = Marshal.SizeOf(typeof(T));
@@ -111,9 +117,11 @@ namespace GTASAControlPanel.Modules
 
             return ConvertToFloatArray(buffer); // Transform the ByteArray to A Float Array (PseudoMatrix ;P)
         }
-        #endregion
+
+        #endregion Read
 
         #region Write
+
         /// <summary>
         /// Writes data to a specified memory arrdress
         /// </summary>
@@ -122,10 +130,11 @@ namespace GTASAControlPanel.Modules
         /// <param name="Value">Data to write</param>
         public static void WriteMemory<T>(int Address, object Value)
         {
-            byte[] buffer = StructureToByteArray(Value); // Transform Data To ByteArray 
+            byte[] buffer = StructureToByteArray(Value); // Transform Data To ByteArray
 
             WriteProcessMemory((int)m_pProcessHandle, Address, buffer, buffer.Length, out m_iNumberOfBytesWritten);
         }
+
         private static void WriteMemory<T>(int Address, char[] Value)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(Value);
@@ -137,9 +146,11 @@ namespace GTASAControlPanel.Modules
         {
             WriteMemory<T>(int.Parse(Address, System.Globalization.NumberStyles.HexNumber), Value);
         }
-        #endregion
+
+        #endregion Write
 
         #region Transformation
+
         private static float[] ConvertToFloatArray(byte[] bytes)
         {
             if (bytes.Length % 4 != 0)
@@ -184,7 +195,8 @@ namespace GTASAControlPanel.Modules
 
             return arr;
         }
-        #endregion
+
+        #endregion Transformation
 
         #region DllImports
 
@@ -196,7 +208,8 @@ namespace GTASAControlPanel.Modules
 
         [DllImport("kernel32.dll")]
         private static extern bool WriteProcessMemory(int hProcess, int lpBaseAddress, byte[] buffer, int size, out int lpNumberOfBytesWritten);
-        #endregion
+
+        #endregion DllImports
 
         #region Constants
 
@@ -204,6 +217,6 @@ namespace GTASAControlPanel.Modules
         private const int PROCESS_VM_READ = 0x0010;
         private const int PROCESS_VM_WRITE = 0x0020;
 
-        #endregion
+        #endregion Constants
     }
 }

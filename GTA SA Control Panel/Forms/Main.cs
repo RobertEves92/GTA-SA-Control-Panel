@@ -12,13 +12,16 @@ namespace GTASAControlPanel.Forms
         private bool isLoaded = false;
 
         #region Control Updaters
+
         private void UpdateControls()
         {
             playerStats.UpdateControls();
         }
-        #endregion
+
+        #endregion Control Updaters
 
         #region Form Actions
+
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             playerStats.SaveSettings();
@@ -34,12 +37,14 @@ namespace GTASAControlPanel.Forms
             Properties.Settings.Default.Reset();
             LoadSettings();
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadSettings();
 
             updateTimer.Start();
         }
+
         private void updateTimer_Tick(object sender, EventArgs e)
         {
             if (!Memory.IsConnected)
@@ -80,6 +85,7 @@ namespace GTASAControlPanel.Forms
                 }
             }
         }
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             UpdateControls();
@@ -106,9 +112,11 @@ namespace GTASAControlPanel.Forms
 
             SetMemoryAddresses();
         }
-        #endregion
+
+        #endregion Form Actions
 
         #region Misc
+
         private void LoadSettings()
         {
             GTAExeVersion gtaVersion = (GTAExeVersion)Properties.Settings.Default.GTAExeVersion;
@@ -119,6 +127,7 @@ namespace GTASAControlPanel.Forms
                     v10ToolStripMenuItem.Checked = true;
                     v11ToolStripMenuItem.Checked = false;
                     break;
+
                 case GTAExeVersion.v11:
                     v10ToolStripMenuItem.Checked = false;
                     v11ToolStripMenuItem.Checked = true;
@@ -139,6 +148,7 @@ namespace GTASAControlPanel.Forms
                 case GTAExeVersion.v10:
                     Global.Addresses = Addresses.Version1;
                     break;
+
                 case GTAExeVersion.v11:
                     Global.Addresses = Addresses.Version2;
                     break;
@@ -153,7 +163,7 @@ namespace GTASAControlPanel.Forms
             InitializeComponent();
         }
 
-        #endregion
+        #endregion Misc
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
         {

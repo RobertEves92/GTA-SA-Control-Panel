@@ -64,6 +64,7 @@ namespace GTASAControlPanel.UserControls
 
             Properties.Settings.Default.Save();
         }
+
         /// <summary>
         /// Loads user settings
         /// </summary>
@@ -175,7 +176,6 @@ namespace GTASAControlPanel.UserControls
                         sc.UpdateValue(null);
                     }
                 }
-
             }
         }
 

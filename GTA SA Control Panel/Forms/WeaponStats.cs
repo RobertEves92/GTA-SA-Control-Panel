@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using GTASAControlPanel.Modules;
+﻿using GTASAControlPanel.Modules;
 using GTASAControlPanel.UserControls;
+using System;
+using System.Windows.Forms;
 
 namespace GTASAControlPanel.Forms
 {
@@ -43,33 +43,43 @@ namespace GTASAControlPanel.Forms
                 case "Pistol":
                     AddressBook.Player.Skills.Weapons.Pistol = s.ControlCurrentValue;
                     break;
+
                 case "Silenced Pistol":
                     AddressBook.Player.Skills.Weapons.SilencedPistol = s.ControlCurrentValue;
                     break;
+
                 case "Desert Eagle":
                     AddressBook.Player.Skills.Weapons.DesertEagle = s.ControlCurrentValue;
                     break;
+
                 case "Shotgun":
                     AddressBook.Player.Skills.Weapons.Shotgun = s.ControlCurrentValue;
                     break;
+
                 case "Sawnoff Shotgun":
                     AddressBook.Player.Skills.Weapons.SawnoffShotgun = s.ControlCurrentValue;
                     break;
+
                 case "Combat Shotgun":
                     AddressBook.Player.Skills.Weapons.CombatShotgun = s.ControlCurrentValue;
                     break;
+
                 case "Machine Pistol":
                     AddressBook.Player.Skills.Weapons.MachinePistol = s.ControlCurrentValue;
                     break;
+
                 case "SMG":
                     AddressBook.Player.Skills.Weapons.SMG = s.ControlCurrentValue;
                     break;
+
                 case "AK47":
                     AddressBook.Player.Skills.Weapons.AK47 = s.ControlCurrentValue;
                     break;
+
                 case "M4":
                     AddressBook.Player.Skills.Weapons.M4 = s.ControlCurrentValue;
                     break;
+
                 default:
                     throw new ArgumentException();
             }

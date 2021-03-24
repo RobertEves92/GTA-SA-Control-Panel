@@ -146,7 +146,7 @@ namespace GTASAControlPanel.Forms
             switch (gtaVersion)
             {
                 case GTAExeVersion.v10:
-                    Global.Addresses = Addresses.Version1;
+                    Global.Addresses = Addresses.Version10;
                     break;
 
                 case GTAExeVersion.v11:

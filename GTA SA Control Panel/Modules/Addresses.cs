@@ -146,7 +146,7 @@
         /// <summary>
         /// Addresses for v1.0 of GTA:SA
         /// </summary>
-        public static Addresses Version1 { get; } = new Addresses()//for v1.0
+        public static Addresses Version10 { get; } = new Addresses()//for v1.0
         {
             Offset = 0,            // <-- No Offset for version 1
             //MemoryWithTwoDifferentAddresses = 123456,  // <-- Explicit address for version 1

@@ -167,17 +167,17 @@ namespace GTASAControlPanel.Forms
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/RobertEves92/GTA-SA-Control-Panel");
+            System.Diagnostics.Process.Start(Properties.Resources.ProjectPage);
         }
 
         private void bugReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/RobertEves92/GTA-SA-Control-Panel/issues/new?assignees=&labels=bug&template=bug-report.md&title=%5BBUG%5D");
+            System.Diagnostics.Process.Start(Properties.Resources.BugReport);
         }
 
         private void featureRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/RobertEves92/GTA-SA-Control-Panel/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=%5BFEATURE%5D");
+            System.Diagnostics.Process.Start(Properties.Resources.FeatureRequest);
         }
     }
 }

@@ -95,6 +95,7 @@ namespace GTASAControlPanel.Forms
         {
             v11ToolStripMenuItem.Checked = false;
             v10ToolStripMenuItem.Checked = true;
+            v20SteamToolStripMenuItem.Checked = false;
 
             Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v10;
             Properties.Settings.Default.Save();
@@ -106,8 +107,22 @@ namespace GTASAControlPanel.Forms
         {
             v11ToolStripMenuItem.Checked = true;
             v10ToolStripMenuItem.Checked = false;
+            v20SteamToolStripMenuItem.Checked = false;
 
             Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v11;
+            Properties.Settings.Default.Save();
+
+            SetMemoryAddresses();
+        }
+
+
+        private void v20SteamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            v11ToolStripMenuItem.Checked = false;
+            v10ToolStripMenuItem.Checked = false;
+            v20SteamToolStripMenuItem.Checked = true;
+
+            Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v2;
             Properties.Settings.Default.Save();
 
             SetMemoryAddresses();
@@ -151,6 +166,10 @@ namespace GTASAControlPanel.Forms
 
                 case GTAExeVersion.v11:
                     Global.Addresses = Addresses.Version11;
+                    break;
+
+                case GTAExeVersion.v2:
+                    Global.Addresses = Addresses.Version2Steam;
                     break;
             }
         }

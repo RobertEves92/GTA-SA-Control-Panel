@@ -141,11 +141,19 @@ namespace GTASAControlPanel.Forms
                 case GTAExeVersion.v10:
                     v10ToolStripMenuItem.Checked = true;
                     v11ToolStripMenuItem.Checked = false;
+                    v20SteamToolStripMenuItem.Checked = false;
                     break;
 
                 case GTAExeVersion.v11:
                     v10ToolStripMenuItem.Checked = false;
                     v11ToolStripMenuItem.Checked = true;
+                    v20SteamToolStripMenuItem.Checked = false;
+                    break;
+
+                case GTAExeVersion.v2:
+                    v10ToolStripMenuItem.Checked = false;
+                    v11ToolStripMenuItem.Checked = false;
+                    v20SteamToolStripMenuItem.Checked = true;
                     break;
             }
 

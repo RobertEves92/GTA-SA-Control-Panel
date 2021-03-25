@@ -140,7 +140,6 @@ namespace GTASAControlPanel.Modules
         /// <summary>
         /// Writes data to a specified memory arrdress
         /// </summary>
-        /// <typeparam name="T">Data type that is being written</typeparam>
         /// <param name="Address">Memory address (as int) to write to</param>
         /// <param name="Value">Data to write</param>
         public static void WriteMemory(int Address, object Value)

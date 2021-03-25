@@ -39,8 +39,13 @@
         /// </summary>
         public int MoneyAddress => Money;
 
+        /// <summary>
+        /// Current Health Address
+        /// </summary>
         public long CurrentHealthAddress => AddressBook.Player.PlayerAddress + CurrentHealthOffset;
-
+        /// <summary>
+        /// Armor Address
+        /// </summary>
         public long ArmorAddress => AddressBook.Player.PlayerAddress + ArmorOffset;
 
         #endregion Misc

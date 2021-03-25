@@ -281,9 +281,9 @@
             /// <summary>
             /// Gets or Sets players lung capacity (0-1000)
             /// </summary>
-            public static float LungCapacity
+            public static uint LungCapacity
             {
-                get => Memory.ReadMemory<float>(Global.Addresses.LungCapacity);
+                get => Memory.ReadMemory<uint>(Global.Addresses.LungCapacity);
                 set => Memory.WriteMemory(Global.Addresses.LungCapacity, value);
             }
 

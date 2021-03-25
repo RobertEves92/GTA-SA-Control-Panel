@@ -5,8 +5,28 @@
     /// </summary>
     public class Addresses
     {
+        private GTAExeVersion GTAExeVersion;
         private int Offset { get; set; }
         private int Money { get; set; }
+        private int PlayerAdd { get; set; }
+        private int CurrentHealthOffset { get; set; }
+        private int ArmorOffset { get; set; }
+        private int MaxHeath
+        {
+            get
+            {
+                switch (GTAExeVersion)
+                {
+                    case GTAExeVersion.v10:
+                    case GTAExeVersion.v11:
+                        return PlayerAddress + 1348;
+                    case GTAExeVersion.v2:
+                        return 0xB2C608;
+                    default:
+                        throw new System.ArgumentException("Invalid Version");
+                }
+            }
+        }
 
         #region Player Addresses
 
@@ -15,7 +35,7 @@
         /// <summary>
         /// Player Data Address
         /// </summary>
-        public int PlayerAddress => 0xB6F5F0 + Offset;
+        public int PlayerAddress => PlayerAdd;
 
         /// <summary>
         /// Secondary Player Data Address
@@ -26,6 +46,12 @@
         /// Money Address
         /// </summary>
         public int MoneyAddress => Money;
+
+        public long CurrentHealthAddress => AddressBook.Player.PlayerAddress + CurrentHealthOffset;
+
+        public long ArmorAddress => AddressBook.Player.PlayerAddress + ArmorOffset;
+
+        public long MaxHealthAddress => MaxHeath;
 
         #endregion Misc
 
@@ -147,8 +173,12 @@
         /// </summary>
         public static Addresses Version10 { get; } = new Addresses()//for v1.0
         {
+            GTAExeVersion = Modules.GTAExeVersion.v10,
             Offset = 0,            // <-- No Offset for version 1
             Money = 0xB7CE50,
+            PlayerAdd = 0xB6F5F0,
+            CurrentHealthOffset = 0x1344,
+            ArmorOffset = 0x1348,
         };
 
         /// <summary>
@@ -156,8 +186,12 @@
         /// </summary>
         public static Addresses Version11 { get; } = new Addresses()//for v1.1
         {
+            GTAExeVersion = Modules.GTAExeVersion.v11,
             Offset = 0x2680,
             Money = 0xB7F4D0,
+            PlayerAdd = 0xB71C70,
+            CurrentHealthOffset = 0x1344,
+            ArmorOffset = 0x1348,
         };
 
         /// <summary>
@@ -165,8 +199,12 @@
         /// </summary>
         public static Addresses Version2Steam { get; } = new Addresses()//for v1.1
         {
+            GTAExeVersion = Modules.GTAExeVersion.v2,
             Offset = (-314840),
             Money = 0xB30188,
+            PlayerAdd = 0xB1C7D8,
+            CurrentHealthOffset = 0x540,
+            ArmorOffset = 0x548,
         };
 
         private Addresses()
@@ -225,8 +263,8 @@
             /// </summary>
             public static float CurrentHealth
             {
-                get => Memory.ReadMemory<float>(PlayerAddress + 1344);
-                set => Memory.WriteMemory((int)(PlayerAddress + 1344), value);
+                get => Memory.ReadMemory<float>(Global.Addresses.CurrentHealthAddress);
+                set => Memory.WriteMemory((int)(Global.Addresses.CurrentHealthAddress), value);
             }
 
             /// <summary>
@@ -234,8 +272,8 @@
             /// </summary>
             public static float MaxHealth
             {
-                get => Memory.ReadMemory<float>(PlayerAddress + 1348);
-                set => Memory.WriteMemory((int)(PlayerAddress + 1348), value);
+                get => Memory.ReadMemory<float>(Global.Addresses.MaxHealthAddress);
+                set => Memory.WriteMemory((int)(Global.Addresses.MaxHealthAddress), value);
             }
 
             /// <summary>
@@ -243,8 +281,8 @@
             /// </summary>
             public static float Armour
             {
-                get => Memory.ReadMemory<float>(PlayerAddress + 1352);
-                set => Memory.WriteMemory((int)(PlayerAddress + 1352), value);
+                get => Memory.ReadMemory<float>(Global.Addresses.ArmorAddress);
+                set => Memory.WriteMemory((int)(Global.Addresses.ArmorAddress), value);
             }
 
             #endregion Money/Health/Armour

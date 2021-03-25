@@ -177,8 +177,8 @@
             Offset = 0,            // <-- No Offset for version 1
             Money = 0xB7CE50,
             PlayerAdd = 0xB6F5F0,
-            CurrentHealthOffset = 0x1344,
-            ArmorOffset = 0x1348,
+            CurrentHealthOffset = 1344,
+            ArmorOffset = 1352,
         };
 
         /// <summary>
@@ -190,8 +190,8 @@
             Offset = 0x2680,
             Money = 0xB7F4D0,
             PlayerAdd = 0xB71C70,
-            CurrentHealthOffset = 0x1344,
-            ArmorOffset = 0x1348,
+            CurrentHealthOffset = 1344,
+            ArmorOffset = 1352,
         };
 
         /// <summary>

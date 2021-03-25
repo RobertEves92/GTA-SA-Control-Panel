@@ -165,8 +165,8 @@
         /// </summary>
         public static Addresses Version2Steam { get; } = new Addresses()//for v1.1
         {
-            Offset = 0x643228,
-            Money = 0x11C0188,
+            Offset = (-314840),
+            Money = 0xB30188,
         };
 
         private Addresses()

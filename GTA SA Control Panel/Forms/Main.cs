@@ -51,7 +51,7 @@ namespace GTASAControlPanel.Forms
             {
                 try
                 {
-                    Memory.Initialize("gta-sa");
+                    Memory.Initialize();
                     lblStatus.Text = "Connected.";
                 }
                 catch

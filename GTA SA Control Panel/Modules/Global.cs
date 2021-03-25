@@ -11,5 +11,7 @@ namespace GTASAControlPanel
         /// Addresses in use
         /// </summary>
         public static Addresses Addresses { get; set; }
+
+        public static string[] CustomProcess { get; set; }
     }
 }

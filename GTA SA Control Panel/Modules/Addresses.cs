@@ -5,6 +5,13 @@
     /// </summary>
     public class Addresses
     {
+        #region References to Offsets and Addresses that vary between versions
+        /*
+         * Offset determines the STANDARD offset to use between versions
+         * Some addresses vary more than just by the standard offset and need
+         * either a totally new address, a different offset, or both, depending
+         * on which version of GTA:SA is being run
+         */
         private GTAExeVersion GTAExeVersion;
         private int Offset { get; set; }
         private int Money { get; set; }
@@ -27,6 +34,8 @@
                 }
             }
         }
+
+        #endregion
 
         #region Player Addresses
 
@@ -197,7 +206,7 @@
         /// <summary>
         /// Addresses for v2 / Steam Version of GTA:SA
         /// </summary>
-        public static Addresses Version2Steam { get; } = new Addresses()//for v1.1
+        public static Addresses Version2Steam { get; } = new Addresses()//for Steam
         {
             GTAExeVersion = Modules.GTAExeVersion.v2,
             Offset = (-314840),

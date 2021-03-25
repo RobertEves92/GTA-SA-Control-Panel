@@ -27,7 +27,6 @@ namespace GTASAControlPanel.UserControls
 
             if (!txtMoney.Modified) { txtMoney.Text = AddressBook.Player.Money.ToString(); }
             statArmour.ControlCurrentValue = Convert.ToInt32(AddressBook.Player.Armour);
-            //statHealth.ControlMaxValue = Convert.ToInt32(AddressBook.Player.MaxHealth);
             statHealth.ControlCurrentValue = Convert.ToInt32(AddressBook.Player.CurrentHealth);
             statFat.ControlCurrentValue = Convert.ToInt32(AddressBook.Player.Fat);
             statStamina.ControlCurrentValue = Convert.ToInt32(AddressBook.Player.Stamina);

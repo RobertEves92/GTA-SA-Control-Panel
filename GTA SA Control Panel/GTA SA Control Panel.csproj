@@ -106,6 +106,7 @@
       <DependentUpon>StatControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Documentation\gtasa addresses.ods" />
     <None Include="Documentation\MD Convert.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

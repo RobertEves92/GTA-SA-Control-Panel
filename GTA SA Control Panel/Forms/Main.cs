@@ -51,7 +51,7 @@ namespace GTASAControlPanel.Forms
             {
                 try
                 {
-                    Memory.Initialize("gta-sa");
+                    Memory.Initialize();
                     lblStatus.Text = "Connected.";
                 }
                 catch
@@ -95,8 +95,9 @@ namespace GTASAControlPanel.Forms
         {
             v11ToolStripMenuItem.Checked = false;
             v10ToolStripMenuItem.Checked = true;
+            v3SteamToolStripMenuItem.Checked = false;
 
-            Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v10;
+            Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v1_0;
             Properties.Settings.Default.Save();
 
             SetMemoryAddresses();
@@ -106,8 +107,22 @@ namespace GTASAControlPanel.Forms
         {
             v11ToolStripMenuItem.Checked = true;
             v10ToolStripMenuItem.Checked = false;
+            v3SteamToolStripMenuItem.Checked = false;
 
-            Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v11;
+            Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v1_1;
+            Properties.Settings.Default.Save();
+
+            SetMemoryAddresses();
+        }
+
+
+        private void v3SteamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            v11ToolStripMenuItem.Checked = false;
+            v10ToolStripMenuItem.Checked = false;
+            v3SteamToolStripMenuItem.Checked = true;
+
+            Properties.Settings.Default.GTAExeVersion = (int)GTAExeVersion.v3_Steam;
             Properties.Settings.Default.Save();
 
             SetMemoryAddresses();
@@ -123,14 +138,22 @@ namespace GTASAControlPanel.Forms
 
             switch (gtaVersion)
             {
-                case GTAExeVersion.v10:
+                case GTAExeVersion.v1_0:
                     v10ToolStripMenuItem.Checked = true;
                     v11ToolStripMenuItem.Checked = false;
+                    v3SteamToolStripMenuItem.Checked = false;
                     break;
 
-                case GTAExeVersion.v11:
+                case GTAExeVersion.v1_1:
                     v10ToolStripMenuItem.Checked = false;
                     v11ToolStripMenuItem.Checked = true;
+                    v3SteamToolStripMenuItem.Checked = false;
+                    break;
+
+                case GTAExeVersion.v3_Steam:
+                    v10ToolStripMenuItem.Checked = false;
+                    v11ToolStripMenuItem.Checked = false;
+                    v3SteamToolStripMenuItem.Checked = true;
                     break;
             }
 
@@ -145,12 +168,16 @@ namespace GTASAControlPanel.Forms
 
             switch (gtaVersion)
             {
-                case GTAExeVersion.v10:
-                    Global.Addresses = Addresses.Version1;
+                case GTAExeVersion.v1_0:
+                    Global.Addresses = Addresses.Version1_0;
                     break;
 
-                case GTAExeVersion.v11:
-                    Global.Addresses = Addresses.Version2;
+                case GTAExeVersion.v1_1:
+                    Global.Addresses = Addresses.Version1_1;
+                    break;
+
+                case GTAExeVersion.v3_Steam:
+                    Global.Addresses = Addresses.Version3_Steam;
                     break;
             }
         }

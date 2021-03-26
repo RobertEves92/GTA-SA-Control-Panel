@@ -5,16 +5,75 @@
     /// </summary>
     public class Addresses
     {
-        private int Offset { get; set; }
-
         #region Player Addresses
+
+        #region References to Offsets and Addresses that vary between versions
+        /*
+         * Offset determines the STANDARD offset to use between versions
+         * Some addresses vary more than just by the standard offset and need
+         * either a totally new address, a different offset, or both, depending
+         * on which version of GTA:SA is being run
+         */
+        private int Offset { get; set; }
+        private int Money { get; set; }
+        private int PlayerAdd { get; set; }
+        private int CurrentHealthOffset { get; set; }
+        private int ArmorOffset { get; set; }
+
+        #endregion
+
+        #region Address Class Constructors
+
+        //private int MemoryWithTwoDifferentAddresses { get; set; } //does not use the offset - placeholder as a reminder
+
+        /// <summary>
+        /// Addresses for v1.0 of GTA:SA
+        /// </summary>
+        public static Addresses Version1_0 { get; } = new Addresses()//for v1.0
+        {
+            Offset = 0,            // <-- No Offset for version 1
+            Money = 0xB7CE50,
+            PlayerAdd = 0xB6F5F0,
+            CurrentHealthOffset = 1344,
+            ArmorOffset = 1352,
+        };
+
+        /// <summary>
+        /// Addresses for v1.1 of GTA:SA
+        /// </summary>
+        public static Addresses Version1_1 { get; } = new Addresses()//for v1.1
+        {
+            Offset = 0x2680,
+            Money = 0xB7F4D0,
+            PlayerAdd = 0xB71C70,
+            CurrentHealthOffset = 1344,
+            ArmorOffset = 1352,
+        };
+
+        /// <summary>
+        /// Addresses for v3_Steam / Steam Version of GTA:SA
+        /// </summary>
+        public static Addresses Version3_Steam { get; } = new Addresses()//for Steam
+        {
+            Offset = (-314840),
+            Money = 0xB30188,
+            PlayerAdd = 0xB1C7D8,
+            CurrentHealthOffset = 0x540,
+            ArmorOffset = 0x548,
+        };
+
+        private Addresses()
+        {
+        }
+
+        #endregion Misc
 
         #region Misc
 
         /// <summary>
         /// Player Data Address
         /// </summary>
-        public int PlayerAddress => 0xB6F5F0 + Offset;
+        public int PlayerAddress => PlayerAdd;
 
         /// <summary>
         /// Secondary Player Data Address
@@ -24,7 +83,16 @@
         /// <summary>
         /// Money Address
         /// </summary>
-        public int Money => 0xB7CE50 + Offset;
+        public int MoneyAddress => Money;
+
+        /// <summary>
+        /// Current Health Address
+        /// </summary>
+        public long CurrentHealthAddress => AddressBook.Player.PlayerAddress + CurrentHealthOffset;
+        /// <summary>
+        /// Armor Address
+        /// </summary>
+        public long ArmorAddress => AddressBook.Player.PlayerAddress + ArmorOffset;
 
         #endregion Misc
 
@@ -136,34 +204,6 @@
         #endregion Gun Skills
 
         #endregion Player Addresses
-
-        #region Misc
-
-        //private int MemoryWithTwoDifferentAddresses { get; set; } //does not use the offset - placeholder as a reminder
-
-        #endregion Misc
-
-        /// <summary>
-        /// Addresses for v1.0 of GTA:SA
-        /// </summary>
-        public static Addresses Version1 { get; } = new Addresses()//for v1.0
-        {
-            Offset = 0,            // <-- No Offset for version 1
-            //MemoryWithTwoDifferentAddresses = 123456,  // <-- Explicit address for version 1
-        };
-
-        /// <summary>
-        /// Addresses for v1.1 of GTA:SA
-        /// </summary>
-        public static Addresses Version2 { get; } = new Addresses()//for v1.1
-        {
-            Offset = 0x2680,                 // <-- No offset for version 2
-            //MemoryWithTwoDifferentAddresses = 987654,  // <-- Different explicit address for version 2
-        };
-
-        private Addresses()
-        {
-        }
     }
 
     /// <summary>
@@ -206,8 +246,8 @@
             /// </summary>
             public static int Money
             {
-                get => Memory.ReadMemory<int>(Global.Addresses.Money);
-                set => Memory.WriteMemory(Global.Addresses.Money, value);
+                get => Memory.ReadMemory<int>(Global.Addresses.MoneyAddress);
+                set => Memory.WriteMemory(Global.Addresses.MoneyAddress, value);
             }
 
             /// <summary>
@@ -215,17 +255,8 @@
             /// </summary>
             public static float CurrentHealth
             {
-                get => Memory.ReadMemory<float>(PlayerAddress + 1344);
-                set => Memory.WriteMemory((int)(PlayerAddress + 1344), value);
-            }
-
-            /// <summary>
-            /// Gets or Sets players max health level
-            /// </summary>
-            public static float MaxHealth
-            {
-                get => Memory.ReadMemory<float>(PlayerAddress + 1348);
-                set => Memory.WriteMemory((int)(PlayerAddress + 1348), value);
+                get => Memory.ReadMemory<float>(Global.Addresses.CurrentHealthAddress);
+                set => Memory.WriteMemory((int)(Global.Addresses.CurrentHealthAddress), value);
             }
 
             /// <summary>
@@ -233,8 +264,8 @@
             /// </summary>
             public static float Armour
             {
-                get => Memory.ReadMemory<float>(PlayerAddress + 1352);
-                set => Memory.WriteMemory((int)(PlayerAddress + 1352), value);
+                get => Memory.ReadMemory<float>(Global.Addresses.ArmorAddress);
+                set => Memory.WriteMemory((int)(Global.Addresses.ArmorAddress), value);
             }
 
             #endregion Money/Health/Armour
@@ -271,9 +302,9 @@
             /// <summary>
             /// Gets or Sets players lung capacity (0-1000)
             /// </summary>
-            public static float LungCapacity
+            public static uint LungCapacity
             {
-                get => Memory.ReadMemory<float>(Global.Addresses.LungCapacity);
+                get => Memory.ReadMemory<uint>(Global.Addresses.LungCapacity);
                 set => Memory.WriteMemory(Global.Addresses.LungCapacity, value);
             }
 

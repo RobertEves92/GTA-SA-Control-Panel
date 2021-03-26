@@ -40,14 +40,15 @@
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.v10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.v11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.v3SteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControlMainWindow = new System.Windows.Forms.TabControl();
-            this.tabPlayerStats = new System.Windows.Forms.TabPage();
-            this.playerStats = new GTASAControlPanel.UserControls.PlayerStats();
             this.gitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bugReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.featureRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControlMainWindow = new System.Windows.Forms.TabControl();
+            this.tabPlayerStats = new System.Windows.Forms.TabPage();
+            this.playerStats = new GTASAControlPanel.UserControls.PlayerStats();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControlMainWindow.SuspendLayout();
@@ -126,31 +127,70 @@
             // 
             this.versionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.v10ToolStripMenuItem,
-            this.v11ToolStripMenuItem});
+            this.v11ToolStripMenuItem,
+            this.v3SteamToolStripMenuItem});
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.versionToolStripMenuItem.Text = "Version";
             // 
             // v10ToolStripMenuItem
             // 
             this.v10ToolStripMenuItem.Name = "v10ToolStripMenuItem";
-            this.v10ToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.v10ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.v10ToolStripMenuItem.Text = "v1.0";
             this.v10ToolStripMenuItem.Click += new System.EventHandler(this.v10ToolStripMenuItem_Click);
             // 
             // v11ToolStripMenuItem
             // 
             this.v11ToolStripMenuItem.Name = "v11ToolStripMenuItem";
-            this.v11ToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.v11ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.v11ToolStripMenuItem.Text = "v1.1";
             this.v11ToolStripMenuItem.Click += new System.EventHandler(this.v11ToolStripMenuItem_Click);
+            // 
+            // v3SteamToolStripMenuItem
+            // 
+            this.v3SteamToolStripMenuItem.Name = "v3SteamToolStripMenuItem";
+            this.v3SteamToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.v3SteamToolStripMenuItem.Text = "v3 / Steam";
+            this.v3SteamToolStripMenuItem.Click += new System.EventHandler(this.v3SteamToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
+            // 
+            // gitHubToolStripMenuItem
+            // 
+            this.gitHubToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.projectToolStripMenuItem,
+            this.bugReportToolStripMenuItem,
+            this.featureRequestToolStripMenuItem});
+            this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
+            this.gitHubToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.gitHubToolStripMenuItem.Text = "GitHub";
+            // 
+            // projectToolStripMenuItem
+            // 
+            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.projectToolStripMenuItem.Text = "Project";
+            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
+            // 
+            // bugReportToolStripMenuItem
+            // 
+            this.bugReportToolStripMenuItem.Name = "bugReportToolStripMenuItem";
+            this.bugReportToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.bugReportToolStripMenuItem.Text = "Bug Report";
+            this.bugReportToolStripMenuItem.Click += new System.EventHandler(this.bugReportToolStripMenuItem_Click);
+            // 
+            // featureRequestToolStripMenuItem
+            // 
+            this.featureRequestToolStripMenuItem.Name = "featureRequestToolStripMenuItem";
+            this.featureRequestToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.featureRequestToolStripMenuItem.Text = "Feature Request";
+            this.featureRequestToolStripMenuItem.Click += new System.EventHandler(this.featureRequestToolStripMenuItem_Click);
             // 
             // tabControlMainWindow
             // 
@@ -180,37 +220,6 @@
             this.playerStats.Name = "playerStats";
             this.playerStats.Size = new System.Drawing.Size(781, 377);
             this.playerStats.TabIndex = 8;
-            // 
-            // gitHubToolStripMenuItem
-            // 
-            this.gitHubToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projectToolStripMenuItem,
-            this.bugReportToolStripMenuItem,
-            this.featureRequestToolStripMenuItem});
-            this.gitHubToolStripMenuItem.Name = "gitHubToolStripMenuItem";
-            this.gitHubToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.gitHubToolStripMenuItem.Text = "GitHub";
-            // 
-            // projectToolStripMenuItem
-            // 
-            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
-            // 
-            // bugReportToolStripMenuItem
-            // 
-            this.bugReportToolStripMenuItem.Name = "bugReportToolStripMenuItem";
-            this.bugReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bugReportToolStripMenuItem.Text = "Bug Report";
-            this.bugReportToolStripMenuItem.Click += new System.EventHandler(this.bugReportToolStripMenuItem_Click);
-            // 
-            // featureRequestToolStripMenuItem
-            // 
-            this.featureRequestToolStripMenuItem.Name = "featureRequestToolStripMenuItem";
-            this.featureRequestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.featureRequestToolStripMenuItem.Text = "Feature Request";
-            this.featureRequestToolStripMenuItem.Click += new System.EventHandler(this.featureRequestToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -260,6 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bugReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem featureRequestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem v3SteamToolStripMenuItem;
     }
 }
 

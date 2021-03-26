@@ -283,7 +283,7 @@ namespace GTASAControlPanel.UserControls
             this.statArmour.ControlLockVisible = true;
             this.statArmour.ControlMaxValue = 150;
             this.statArmour.ControlText = "Current Armour";
-            this.statArmour.ControlTick = 50;
+            this.statArmour.ControlTick = 25;
             this.statArmour.ControlValueAsPercent = false;
             this.statArmour.Location = new System.Drawing.Point(7, 78);
             this.statArmour.Name = "statArmour";
@@ -297,9 +297,9 @@ namespace GTASAControlPanel.UserControls
             this.statHealth.ControlLock = false;
             this.statHealth.ControlLockValue = 0;
             this.statHealth.ControlLockVisible = true;
-            this.statHealth.ControlMaxValue = 400;
+            this.statHealth.ControlMaxValue = 176;
             this.statHealth.ControlText = "Current Health";
-            this.statHealth.ControlTick = 50;
+            this.statHealth.ControlTick = 25;
             this.statHealth.ControlValueAsPercent = false;
             this.statHealth.Location = new System.Drawing.Point(7, 29);
             this.statHealth.Name = "statHealth";

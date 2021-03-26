@@ -11,5 +11,10 @@ namespace GTASAControlPanel
         /// Addresses in use
         /// </summary>
         public static Addresses Addresses { get; set; }
+
+        /// <summary>
+        /// List of custom process names specified in command line arguments
+        /// </summary>
+        public static string[] CustomProcess { get; set; }
     }
 }

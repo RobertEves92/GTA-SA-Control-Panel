@@ -37,20 +37,35 @@ namespace GTASAControlPanel.Modules
         }
 
         /// <summary>
-        /// Sets up the connection to a specified process
+        /// Sets up the connection
         /// </summary>
-        /// <param name="ProcessName"></param>
-        public static void Initialize(string ProcessName)
+        public static void Initialize()
         {
+            m_Process = null;
+
             // Check if process is running
-            if (Process.GetProcessesByName(ProcessName).Length > 0)
+            if (Process.GetProcessesByName("gta-sa").Length > 0)
             {
-                m_Process = Process.GetProcessesByName(ProcessName)[0];
+                m_Process = Process.GetProcessesByName("gta-sa")[0];
             }
-            else
+            else if (Process.GetProcessesByName("gta_sa").Length > 0)
             {
-                throw new ArgumentException("Couldn't find " + ProcessName);
+                m_Process = Process.GetProcessesByName("gta_sa")[0];
             }
+            else if(Global.CustomProcess.Length >0)
+            {
+                foreach (string process in Global.CustomProcess)
+                {
+                    if (Process.GetProcessesByName(process).Length > 0)
+                    {
+                        m_Process = Process.GetProcessesByName(process)[0];
+                        break;
+                    }
+                }
+            }
+
+            if (m_Process == null)
+                throw new ArgumentException("Couldn't find a GTA SA Process");
 
             m_pProcessHandle = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, false, m_Process.Id); // Sets Our ProcessHandle
             isConnected = true;
@@ -97,7 +112,8 @@ namespace GTASAControlPanel.Modules
         /// <returns>Stored memory data in specified data type</returns>
         public static T ReadMemory<T>(long Address) where T : struct
         {
-            return ReadMemory<T>(Convert.ToInt32(Address));
+            Int32 addr = Convert.ToInt32(Address);
+            return ReadMemory<T>(addr);
         }
 
         private static T ReadMemory<T>(int Address) where T : struct
@@ -125,7 +141,6 @@ namespace GTASAControlPanel.Modules
         /// <summary>
         /// Writes data to a specified memory arrdress
         /// </summary>
-        /// <typeparam name="T">Data type that is being written</typeparam>
         /// <param name="Address">Memory address (as int) to write to</param>
         /// <param name="Value">Data to write</param>
         public static void WriteMemory(int Address, object Value)

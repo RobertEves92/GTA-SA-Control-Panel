@@ -84,11 +84,6 @@ namespace GTASAControlPanel.Forms
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            UpdateControls();
-        }
-
         private void v10ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             v11ToolStripMenuItem.Checked = false;

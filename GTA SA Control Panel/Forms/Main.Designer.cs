@@ -32,7 +32,6 @@
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +63,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 487);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 442);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(805, 22);
             this.statusStrip1.SizingGrip = false;
@@ -76,16 +75,6 @@
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(70, 17);
             this.lblStatus.Text = "Initialising...";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 27);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(790, 41);
-            this.btnRefresh.TabIndex = 0;
-            this.btnRefresh.Text = "Refresh data from GTA:SA";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // menuStrip1
             // 
@@ -130,34 +119,34 @@
             this.v11ToolStripMenuItem,
             this.v3SteamToolStripMenuItem});
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
-            this.versionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.versionToolStripMenuItem.Text = "Version";
             // 
             // v10ToolStripMenuItem
             // 
             this.v10ToolStripMenuItem.Name = "v10ToolStripMenuItem";
-            this.v10ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.v10ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.v10ToolStripMenuItem.Text = "v1.0";
             this.v10ToolStripMenuItem.Click += new System.EventHandler(this.v10ToolStripMenuItem_Click);
             // 
             // v11ToolStripMenuItem
             // 
             this.v11ToolStripMenuItem.Name = "v11ToolStripMenuItem";
-            this.v11ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.v11ToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.v11ToolStripMenuItem.Text = "v1.1";
             this.v11ToolStripMenuItem.Click += new System.EventHandler(this.v11ToolStripMenuItem_Click);
             // 
             // v3SteamToolStripMenuItem
             // 
             this.v3SteamToolStripMenuItem.Name = "v3SteamToolStripMenuItem";
-            this.v3SteamToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.v3SteamToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.v3SteamToolStripMenuItem.Text = "v3 / Steam";
             this.v3SteamToolStripMenuItem.Click += new System.EventHandler(this.v3SteamToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
@@ -196,7 +185,7 @@
             // 
             this.tabControlMainWindow.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControlMainWindow.Controls.Add(this.tabPlayerStats);
-            this.tabControlMainWindow.Location = new System.Drawing.Point(12, 74);
+            this.tabControlMainWindow.Location = new System.Drawing.Point(12, 29);
             this.tabControlMainWindow.Name = "tabControlMainWindow";
             this.tabControlMainWindow.SelectedIndex = 0;
             this.tabControlMainWindow.Size = new System.Drawing.Size(790, 410);
@@ -225,9 +214,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 509);
+            this.ClientSize = new System.Drawing.Size(805, 464);
             this.Controls.Add(this.tabControlMainWindow);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -253,7 +241,6 @@
         private System.Windows.Forms.Timer updateTimer;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;

@@ -5,6 +5,8 @@
     /// </summary>
     public class Addresses
     {
+        #region Player Addresses
+
         #region References to Offsets and Addresses that vary between versions
         /*
          * Offset determines the STANDARD offset to use between versions
@@ -20,7 +22,51 @@
 
         #endregion
 
-        #region Player Addresses
+        #region Address Class Constructors
+
+        //private int MemoryWithTwoDifferentAddresses { get; set; } //does not use the offset - placeholder as a reminder
+
+        /// <summary>
+        /// Addresses for v1.0 of GTA:SA
+        /// </summary>
+        public static Addresses Version1_0 { get; } = new Addresses()//for v1.0
+        {
+            Offset = 0,            // <-- No Offset for version 1
+            Money = 0xB7CE50,
+            PlayerAdd = 0xB6F5F0,
+            CurrentHealthOffset = 1344,
+            ArmorOffset = 1352,
+        };
+
+        /// <summary>
+        /// Addresses for v1.1 of GTA:SA
+        /// </summary>
+        public static Addresses Version1_1 { get; } = new Addresses()//for v1.1
+        {
+            Offset = 0x2680,
+            Money = 0xB7F4D0,
+            PlayerAdd = 0xB71C70,
+            CurrentHealthOffset = 1344,
+            ArmorOffset = 1352,
+        };
+
+        /// <summary>
+        /// Addresses for v3_Steam / Steam Version of GTA:SA
+        /// </summary>
+        public static Addresses Version3_Steam { get; } = new Addresses()//for Steam
+        {
+            Offset = (-314840),
+            Money = 0xB30188,
+            PlayerAdd = 0xB1C7D8,
+            CurrentHealthOffset = 0x540,
+            ArmorOffset = 0x548,
+        };
+
+        private Addresses()
+        {
+        }
+
+        #endregion Misc
 
         #region Misc
 
@@ -158,52 +204,6 @@
         #endregion Gun Skills
 
         #endregion Player Addresses
-
-        #region Misc
-
-        //private int MemoryWithTwoDifferentAddresses { get; set; } //does not use the offset - placeholder as a reminder
-
-        /// <summary>
-        /// Addresses for v1.0 of GTA:SA
-        /// </summary>
-        public static Addresses Version10 { get; } = new Addresses()//for v1.0
-        {
-            Offset = 0,            // <-- No Offset for version 1
-            Money = 0xB7CE50,
-            PlayerAdd = 0xB6F5F0,
-            CurrentHealthOffset = 1344,
-            ArmorOffset = 1352,
-        };
-
-        /// <summary>
-        /// Addresses for v1.1 of GTA:SA
-        /// </summary>
-        public static Addresses Version11 { get; } = new Addresses()//for v1.1
-        {
-            Offset = 0x2680,
-            Money = 0xB7F4D0,
-            PlayerAdd = 0xB71C70,
-            CurrentHealthOffset = 1344,
-            ArmorOffset = 1352,
-        };
-
-        /// <summary>
-        /// Addresses for v2 / Steam Version of GTA:SA
-        /// </summary>
-        public static Addresses Version2Steam { get; } = new Addresses()//for Steam
-        {
-            Offset = (-314840),
-            Money = 0xB30188,
-            PlayerAdd = 0xB1C7D8,
-            CurrentHealthOffset = 0x540,
-            ArmorOffset = 0x548,
-        };
-
-        private Addresses()
-        {
-        }
-
-        #endregion Misc
     }
 
     /// <summary>

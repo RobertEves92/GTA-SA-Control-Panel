@@ -8,16 +8,16 @@
         /// <summary>
         /// V1.0
         /// </summary>
-        v10,
+        v1_0,
 
         /// <summary>
         /// v1.1
         /// </summary>
-        v11,
+        v1_1,
 
         /// <summary>
-        /// V2 / Steam Version
+        /// V3 / Steam Version
         /// </summary>
-        v2
+        v3_Steam
     }
 }

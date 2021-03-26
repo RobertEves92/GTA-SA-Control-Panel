@@ -40,6 +40,7 @@
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.v10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.v11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.v3SteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.tabControlMainWindow = new System.Windows.Forms.TabControl();
             this.tabPlayerStats = new System.Windows.Forms.TabPage();
             this.playerStats = new GTASAControlPanel.UserControls.PlayerStats();
-            this.v20SteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControlMainWindow.SuspendLayout();
@@ -128,7 +128,7 @@
             this.versionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.v10ToolStripMenuItem,
             this.v11ToolStripMenuItem,
-            this.v20SteamToolStripMenuItem});
+            this.v3SteamToolStripMenuItem});
             this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
             this.versionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.versionToolStripMenuItem.Text = "Version";
@@ -146,6 +146,13 @@
             this.v11ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.v11ToolStripMenuItem.Text = "v1.1";
             this.v11ToolStripMenuItem.Click += new System.EventHandler(this.v11ToolStripMenuItem_Click);
+            // 
+            // v3SteamToolStripMenuItem
+            // 
+            this.v3SteamToolStripMenuItem.Name = "v3SteamToolStripMenuItem";
+            this.v3SteamToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.v3SteamToolStripMenuItem.Text = "v3 / Steam";
+            this.v3SteamToolStripMenuItem.Click += new System.EventHandler(this.v3SteamToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
@@ -214,13 +221,6 @@
             this.playerStats.Size = new System.Drawing.Size(781, 377);
             this.playerStats.TabIndex = 8;
             // 
-            // v20SteamToolStripMenuItem
-            // 
-            this.v20SteamToolStripMenuItem.Name = "v20SteamToolStripMenuItem";
-            this.v20SteamToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.v20SteamToolStripMenuItem.Text = "v2.0 / Steam";
-            this.v20SteamToolStripMenuItem.Click += new System.EventHandler(this.v20SteamToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,7 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bugReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem featureRequestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem v20SteamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem v3SteamToolStripMenuItem;
     }
 }
 

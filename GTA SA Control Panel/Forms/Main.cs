@@ -84,11 +84,6 @@ namespace GTASAControlPanel.Forms
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            UpdateControls();
-        }
-
         private void v10ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             v11ToolStripMenuItem.Checked = false;
@@ -200,6 +195,24 @@ namespace GTASAControlPanel.Forms
         private void featureRequestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(Properties.Resources.FeatureRequest);
+        }
+
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(updateTimer.Enabled)
+            {
+                updateTimer.Stop();
+                connectToolStripMenuItem.Text = "Connect";
+                Utilities.ResetAllControls(this);
+                Utilities.ResetAllControls(playerStats);
+                lblStatus.Text = "Disconnected";
+                isLoaded = false;
+            }
+            else
+            {
+                updateTimer.Start();
+                connectToolStripMenuItem.Text = "Disconnect";
+            }
         }
     }
 }

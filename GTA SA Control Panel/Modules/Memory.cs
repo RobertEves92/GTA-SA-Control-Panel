@@ -60,7 +60,6 @@ namespace GTASAControlPanel.Modules
                     {
                         m_Process = Process.GetProcessesByName(process)[0];
                         break;
-                        //TODO: need to throw exception if still no processes found
                     }
                 }
             }

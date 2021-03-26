@@ -196,5 +196,9 @@ namespace GTASAControlPanel.Forms
         {
             System.Diagnostics.Process.Start(Properties.Resources.FeatureRequest);
         }
+
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

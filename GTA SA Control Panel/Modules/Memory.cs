@@ -41,6 +41,8 @@ namespace GTASAControlPanel.Modules
         /// </summary>
         public static void Initialize()
         {
+            m_Process = null;
+
             // Check if process is running
             if (Process.GetProcessesByName("gta-sa").Length > 0)
             {
@@ -50,7 +52,7 @@ namespace GTASAControlPanel.Modules
             {
                 m_Process = Process.GetProcessesByName("gta_sa")[0];
             }
-            else if (Global.CustomProcess.Length >0)
+            else if(Global.CustomProcess.Length >0)
             {
                 foreach (string process in Global.CustomProcess)
                 {
@@ -58,13 +60,13 @@ namespace GTASAControlPanel.Modules
                     {
                         m_Process = Process.GetProcessesByName(process)[0];
                         break;
+                        //TODO: need to throw exception if still no processes found
                     }
                 }
             }
-            else
-            {
+
+            if (m_Process == null)
                 throw new ArgumentException("Couldn't find a GTA SA Process");
-            }
 
             m_pProcessHandle = OpenProcess(PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE, false, m_Process.Id); // Sets Our ProcessHandle
             isConnected = true;

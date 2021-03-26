@@ -5,22 +5,16 @@ using System.Windows.Forms;
 
 namespace GTASAControlPanel.UserControls
 {
-    /// <summary>
-    /// Player stats control
-    /// </summary>
+    /// <summary>Player stats control</summary>
     public partial class PlayerStats : UserControl
     {
-        /// <summary>
-        /// Player stats control
-        /// </summary>
+        /// <summary>Player stats control</summary>
         public PlayerStats()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Updates the controls eith values from in game
-        /// </summary>
+        /// <summary>Updates the controls eith values from in game</summary>
         public void UpdateControls()
         {
             UpdateLockedValues();
@@ -39,9 +33,7 @@ namespace GTASAControlPanel.UserControls
             statGambling.ControlCurrentValue = Convert.ToInt32(AddressBook.Player.Skills.Gambling);
         }
 
-        /// <summary>
-        /// Commits user settings
-        /// </summary>
+        /// <summary>Commits user settings</summary>
         public void SaveSettings()
         {
             Properties.Settings.Default.LockHealth = statHealth.ControlLock;
@@ -64,9 +56,7 @@ namespace GTASAControlPanel.UserControls
             Properties.Settings.Default.Save();
         }
 
-        /// <summary>
-        /// Loads user settings
-        /// </summary>
+        /// <summary>Loads user settings</summary>
         public void LoadSettings()
         {
             statHealth.ControlLock = Properties.Settings.Default.LockHealth;

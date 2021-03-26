@@ -7,9 +7,7 @@ namespace GTASAControlPanel.Forms
 {
     public partial class WeaponStats : Form
     {
-        /// <summary>
-        /// Form to get/set weapon stats
-        /// </summary>
+        /// <summary>Form to get/set weapon stats</summary>
         public WeaponStats()
         {
             InitializeComponent();

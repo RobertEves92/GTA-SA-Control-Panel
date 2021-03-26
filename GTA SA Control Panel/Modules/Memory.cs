@@ -6,8 +6,8 @@ using System.Text;
 namespace GTASAControlPanel.Modules
 {
     /// <summary>
-    /// Class for handling reading and writing to a processes memory
-    /// Modified version of code found at https://stackoverflow.com/questions/50672268/c-sharp-reading-another-process-memory
+    /// Class for handling reading and writing to a processes memory Modified version of code found
+    /// at https://stackoverflow.com/questions/50672268/c-sharp-reading-another-process-memory
     /// </summary>
     public static class Memory
     {
@@ -19,9 +19,7 @@ namespace GTASAControlPanel.Modules
 
         private static bool isConnected = false;
 
-        /// <summary>
-        /// Checks if this program is connected to the gta process
-        /// </summary>
+        /// <summary>Checks if this program is connected to the gta process</summary>
         public static bool IsConnected
         {
             get
@@ -36,9 +34,7 @@ namespace GTASAControlPanel.Modules
             }
         }
 
-        /// <summary>
-        /// Sets up the connection
-        /// </summary>
+        /// <summary>Sets up the connection</summary>
         public static void Initialize()
         {
             m_Process = null;
@@ -52,7 +48,7 @@ namespace GTASAControlPanel.Modules
             {
                 m_Process = Process.GetProcessesByName("gta_sa")[0];
             }
-            else if(Global.CustomProcess.Length >0)
+            else if (Global.CustomProcess.Length > 0)
             {
                 foreach (string process in Global.CustomProcess)
                 {
@@ -71,9 +67,7 @@ namespace GTASAControlPanel.Modules
             isConnected = true;
         }
 
-        /// <summary>
-        /// Gets the address of a specified module
-        /// </summary>
+        /// <summary>Gets the address of a specified module</summary>
         /// <param name="ModuleName">Name of the module to get the address of</param>
         /// <returns>memory address as int</returns>
         public static int GetModuleAddress(string ModuleName)
@@ -104,9 +98,7 @@ namespace GTASAControlPanel.Modules
 
         #region Read
 
-        /// <summary>
-        /// Reads data from a specified memory address
-        /// </summary>
+        /// <summary>Reads data from a specified memory address</summary>
         /// <typeparam name="T">Type of data to return</typeparam>
         /// <param name="Address">Address (as long) to read from</param>
         /// <returns>Stored memory data in specified data type</returns>
@@ -138,9 +130,7 @@ namespace GTASAControlPanel.Modules
 
         #region Write
 
-        /// <summary>
-        /// Writes data to a specified memory arrdress
-        /// </summary>
+        /// <summary>Writes data to a specified memory arrdress</summary>
         /// <param name="Address">Memory address (as int) to write to</param>
         /// <param name="Value">Data to write</param>
         public static void WriteMemory(int Address, object Value)

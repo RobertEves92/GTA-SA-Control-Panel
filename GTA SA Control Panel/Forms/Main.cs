@@ -4,9 +4,7 @@ using System.Windows.Forms;
 
 namespace GTASAControlPanel.Forms
 {
-    /// <summary>
-    /// Main Form of the user display
-    /// </summary>
+    /// <summary>Main Form of the user display</summary>
     public partial class Main : Form
     {
         private bool isLoaded = false;
@@ -115,7 +113,6 @@ namespace GTASAControlPanel.Forms
             SetMemoryAddresses();
         }
 
-
         private void v3SteamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             v11ToolStripMenuItem.Checked = false;
@@ -182,9 +179,7 @@ namespace GTASAControlPanel.Forms
             }
         }
 
-        /// <summary>
-        /// Main form class
-        /// </summary>
+        /// <summary>Main form class</summary>
         public Main()
         {
             InitializeComponent();

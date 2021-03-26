@@ -3,14 +3,10 @@ using System.Windows.Forms;
 
 namespace GTASAControlPanel.Modules
 {
-    /// <summary>
-    /// Provides support functionality
-    /// </summary>
+    /// <summary>Provides support functionality</summary>
     public static class Utilities
     {
-        /// <summary>
-        /// Resets all controls on a specified form
-        /// </summary>
+        /// <summary>Resets all controls on a specified form</summary>
         /// <param name="form">Form to reset</param>
         public static void ResetAllControls(Control form)
         {

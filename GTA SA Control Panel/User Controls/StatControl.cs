@@ -4,39 +4,29 @@ using System.Windows.Forms;
 
 namespace GTASAControlPanel.UserControls
 {
-    /// <summary>
-    /// User Control for player stats
-    /// </summary>
+    /// <summary>User Control for player stats</summary>
     public partial class StatControl : UserControl
     {
-        /// <summary>
-        /// Event handler for when the track bar value is changed
-        /// </summary>
+        /// <summary>Event handler for when the track bar value is changed</summary>
         [Browsable(true)]
         [Category("Action")]
         [Description("Invoked when user changes the track bar value")]
         public event EventHandler TrackValueChanged;
 
-        /// <summary>
-        /// Initialises the StatControl class components
-        /// </summary>
+        /// <summary>Initialises the StatControl class components</summary>
         public StatControl()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Gets or Sets the stat controls maximum permitted value
-        /// </summary>
+        /// <summary>Gets or Sets the stat controls maximum permitted value</summary>
         public int ControlMaxValue
         {
             get => trkValue.Maximum;
             set => trkValue.Maximum = value;
         }
 
-        /// <summary>
-        /// Gets or Sets the stat controls value
-        /// </summary>
+        /// <summary>Gets or Sets the stat controls value</summary>
         public int ControlCurrentValue
         {
             get => trkValue.Value;
@@ -55,41 +45,31 @@ namespace GTASAControlPanel.UserControls
             }
         }
 
-        /// <summary>
-        /// Gets or Sets the stat control caption text
-        /// </summary>
+        /// <summary>Gets or Sets the stat control caption text</summary>
         public string ControlText
         {
             get => lblCaption.Text;
             set => lblCaption.Text = value;
         }
 
-        /// <summary>
-        /// Gets or Sets the trackbar tick frequency
-        /// </summary>
+        /// <summary>Gets or Sets the trackbar tick frequency</summary>
         public int ControlTick
         {
             get => trkValue.TickFrequency;
             set => trkValue.TickFrequency = value;
         }
 
-        /// <summary>
-        /// Gets or Sets the lock status of the control
-        /// </summary>
+        /// <summary>Gets or Sets the lock status of the control</summary>
         public bool ControlLock
         {
             get => chkLock.Checked;
             set => chkLock.Checked = value;
         }
 
-        /// <summary>
-        /// Gets or Sets the value to lock the stat control at
-        /// </summary>
+        /// <summary>Gets or Sets the value to lock the stat control at</summary>
         public int ControlLockValue { get; set; }
 
-        /// <summary>
-        /// Enable or disable the control lock checkbox
-        /// </summary>
+        /// <summary>Enable or disable the control lock checkbox</summary>
         public bool ControlLockVisible
         {
             get => chkLock.Visible;
@@ -110,7 +90,8 @@ namespace GTASAControlPanel.UserControls
         }
 
         /// <summary>
-        /// Sets whether the control value should be displayed as a percentage of the maximum permitted value, or as the raw value
+        /// Sets whether the control value should be displayed as a percentage of the maximum
+        /// permitted value, or as the raw value
         /// </summary>
         public bool ControlValueAsPercent { get; set; }
 
@@ -119,9 +100,7 @@ namespace GTASAControlPanel.UserControls
             UpdateValue(e);
         }
 
-        /// <summary>
-        /// Triggers event when the trackbar value is changed by the user
-        /// </summary>
+        /// <summary>Triggers event when the trackbar value is changed by the user</summary>
         /// <param name="e">Event Arguments</param>
         public void UpdateValue(EventArgs e)
         {

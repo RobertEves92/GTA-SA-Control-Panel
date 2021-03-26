@@ -27,6 +27,8 @@ namespace GTASAControlPanel.Modules
                 //should return false if not connected or of process has ended for whatever reason
                 if (isConnected)
                 {
+                    if (m_Process == null)
+                        return false;
                     return !m_Process.HasExited;
                 }
 
